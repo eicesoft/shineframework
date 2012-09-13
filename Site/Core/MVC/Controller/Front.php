@@ -39,37 +39,64 @@ class Front
 	 */
 	private $router;
 
+	/**
+	 * @var int
+	 */
 	private $mode;
 
+	/**
+	 *
+	 */
 	private function __construct()
 	{
 
 	}
 
+	/**
+	 * 基本初始化
+	 */
 	public function init()
 	{
 		switch ($this->mode) {
 			case Application::WEB_MODE:
-				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\WebDispatcher();
 				$this->router = new \Core\MVC\Controller\Router\WebRouter();
+				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\WebDispatcher();
+				break;
+			case Application::FLASH_MODE:
+				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\FlashDispatcher();
+				$this->router = new \Core\MVC\Controller\Router\FlashRouter();
 				break;
 		}
 	}
 
+	/**
+	 * 初始化路由器
+	 */
 	public function initRouter()
 	{
 		$this->router->init();
 	}
 
+	/**
+	 * 初始化派发器
+	 */
 	public function initDispatcher() {
 		$this->dispatcher->setRouter($this->router);
 		$this->dispatcher->init();
 	}
 
+	/**
+	 * 派发器执行
+	 * @return mixed
+	 */
 	public function execute() {
 		return $this->dispatcher->execute();
 	}
 
+	/**
+	 * 设置路由模式
+	 * @param int $mode
+	 */
 	public function setMode( $mode )
 	{
 		$this->mode = $mode;

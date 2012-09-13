@@ -40,6 +40,8 @@ class WebRouter extends Router
 		}
 
 		$this->params = $_GET;
+
+		return $this;
 	}
 
 	/**
