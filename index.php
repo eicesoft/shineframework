@@ -6,6 +6,7 @@ define('APP_PATH', __DIR__ . DS . 'App');
 
 use Core\Application;
 use Core\Error\CoreError;
+use Core\Monitor\Debug;
 
 try {
 	$app = Application::Instance();
@@ -19,5 +20,4 @@ try {
 }
 
 $end = microtime(true);
-
-\Core\Monitor\Debug::Instance()->trace(sprintf("page run: %0.4f ms", ($end - $start) * 1000));
+Debug::Instance()->trace(sprintf("Page run: %0.4f ms", ($end - $start) * 1000));

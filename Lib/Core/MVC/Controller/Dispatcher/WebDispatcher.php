@@ -11,10 +11,9 @@ class WebDispatcher extends Dispatcher
 
 	}
 
-
-
 	public function execute()
 	{
-
+		return $this->_call($this->router->getController(),
+			$this->router->getAction(), $this->router->getParams());
 	}
 }

@@ -12,6 +12,6 @@ class CoreError extends \Exception
 	{
 		$message = Language::Instance()->get( $lankey, 'core' );
 
-		$this->message = sprintf( $message, $params );
+		$this->message = vsprintf( $message, $params );
 	}
 }

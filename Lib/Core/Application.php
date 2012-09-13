@@ -86,6 +86,10 @@ class Application
 		$this->front->init();
 		$this->front->initRouter();
 		$this->front->initDispatcher();
+
+		$execData = $this->front->execute();
+		Debug::Instance()->trace($execData, 'Action result');
+
 	}
 
 	/**

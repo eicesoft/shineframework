@@ -66,6 +66,10 @@ class Front
 		$this->dispatcher->init();
 	}
 
+	public function execute() {
+		return $this->dispatcher->execute();
+	}
+
 	public function setMode( $mode )
 	{
 		$this->mode = $mode;

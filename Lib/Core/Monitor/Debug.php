@@ -7,6 +7,9 @@ use Core\Helper\FirePHP;
  * 调试类
  */
 class Debug {
+	/**
+	 * @var \Core\Helper\FirePHP
+	 */
 	private $firebug;
 
 	/**
