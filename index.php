@@ -1,8 +1,8 @@
 <?php
-include 'Lib/autoload.php'; //自动加载
+include 'Site/autoload.php'; //自动加载
 
 $start = microtime(true);
-define('APP_PATH', __DIR__ . DS . 'App');
+define('APP_PATH', __DIR__ . DS . 'Site' . DS . 'App');
 
 use Core\Application;
 use Core\Error\CoreError;

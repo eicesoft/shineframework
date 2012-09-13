@@ -1,7 +1,8 @@
 <?php
-include 'Lib/autoload.php'; //自动加载
+include 'Site/autoload.php'; //自动加载
 
-define('APP_PATH', __DIR__ . DS . 'App');
+$start = microtime(true);
+define('APP_PATH', __DIR__ . DS . 'Site' . DS . 'App');
 
 use Core\Application;
 use Core\Error\CoreError;
@@ -16,3 +17,6 @@ try {
 } catch (CoreError $ex) {
 	echo $ex->getMessage();
 }
+
+$end = microtime(true);
+Debug::Instance()->trace(sprintf("Page run: %0.4f ms", ($end - $start) * 1000));
