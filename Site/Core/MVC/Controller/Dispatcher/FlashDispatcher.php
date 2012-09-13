@@ -6,4 +6,11 @@ use Core\MVC\Controller\Dispatcher;
 class FlashDispatcher extends Dispatcher
 {
 
+	public function init()
+	{
+	}
+
+	public function execute()
+	{
+	}
 }

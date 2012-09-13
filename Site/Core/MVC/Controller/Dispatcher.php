@@ -3,6 +3,9 @@ namespace Core\MVC\Controller;
 
 use Core\Error\CoreError;
 
+/**
+ * 派发器
+ */
 abstract class Dispatcher
 {
 	/**
@@ -33,6 +36,17 @@ abstract class Dispatcher
 	}
 
 	/**
+	 * @param $controller
+	 * @param $action
+	 * @return Action
+	 */
+	private function _createAction($controller, $action) {
+		$className = 'App\\Controller\\' . $controller . '\\' . $action . 'Action';
+		return new $className();
+	}
+
+	/**
+	 * 调用Action
 	 * @param string $controller
 	 * @param string $action
 	 * @param string $params
@@ -40,12 +54,20 @@ abstract class Dispatcher
 	 */
 	protected function _call($controller, $action, $params) {
 		$this->_loadAction($controller, $action);
-		$className = 'App\\Controller\\' . $controller . '\\' . $action . 'Action';
-		$action = new $className();
-		return call_user_func_array(array(&$action, 'execute'), $params);
+		$action = $this->_createAction($controller, $action);
+
+		return call_user_func_array(array(&$action, 'execute'), array($params));
 	}
 
+	/**
+	 * 派发器初始化
+	 * @return mixed
+	 */
 	public abstract function init();
 
+	/**
+	 * 派发器执行
+	 * @return mixed
+	 */
 	public abstract function execute();
 }
