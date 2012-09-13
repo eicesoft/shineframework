@@ -8,10 +8,12 @@ use Core\Lang\Language;
  */
 class CoreError extends \Exception
 {
-	public function __construct( $lankey, $params = array() )
+	public function __construct( $lankey, $params = array(), $code = 0 )
 	{
-		$message = Language::Instance()->get( $lankey, 'core' );
-
-		$this->message = vsprintf( $message, $params );
+		$msgtpl = Language::Instance()->get( $lankey, 'core' );
+		$message = vsprintf( $msgtpl, $params );
+		parent::__construct($message, $code);
 	}
+
+
 }
