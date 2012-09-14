@@ -48,8 +48,6 @@ class Application
 	 */
 	private $front;
 
-	private $view;
-
 	/**
 	 * 路由模式
 	 * @var int
@@ -91,6 +89,8 @@ class Application
 
 		$execData = $this->front->execute();
 		Debug::Instance()->trace($execData, 'Action result');
+
+		$this->front->display($execData);
 	}
 
 	/**

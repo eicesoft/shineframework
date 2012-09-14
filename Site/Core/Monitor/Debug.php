@@ -36,18 +36,18 @@ class Debug {
 
 		switch($debugtype) {
 			case 'firebug':
-				$this->debuginstance = FirePHP::getInstance();
+				$this->debuginstance = new FirePHP();
 				break;
 			case 'chromephp':
 				$this->debuginstance = ChromePhp::getInstance();
 				break;
 			default:
-				$this->debuginstance = FirePHP::getInstance();
+				$this->debuginstance = new FirePHP();
 				break;
 		}
 
 		$this->debuginstance->setEnabled($isdebug);
-//		$this->debuginstance = new FirePHP();
+//		$this->debuginstance = new FirePHP();-
 //		$this->debuginstance->setEnabled($isdebug);
 	}
 

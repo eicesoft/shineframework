@@ -5,6 +5,7 @@ use Core\Application;
 use Core\Error\CoreError;
 use Core\MVC\Controller\Router;
 use Core\MVC\Controller\Dispatcher;
+use Core\MVC\View\View;
 
 /**
  * 前端控制器
@@ -40,6 +41,11 @@ class Front
 	private $router;
 
 	/**
+	 * @var View
+	 */
+	private $view;
+
+	/**
 	 * @var int
 	 */
 	private $mode;
@@ -61,6 +67,7 @@ class Front
 			case Application::WEB_MODE:
 				$this->router = new \Core\MVC\Controller\Router\WebRouter();
 				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\WebDispatcher();
+				$this->view = new \Core\MVC\View\SimpleView();
 				break;
 			case Application::FLASH_MODE:
 				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\FlashDispatcher();
@@ -91,6 +98,13 @@ class Front
 	 */
 	public function execute() {
 		return $this->dispatcher->execute();
+	}
+
+	public function display($datas) {
+		$view = $this->router->getController() . DS . $this->router->getAction();
+		$this->view->setView($view);
+		$this->view->assigns($datas);
+		echo $this->view->display();
 	}
 
 	/**

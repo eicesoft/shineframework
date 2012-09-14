@@ -6,13 +6,16 @@ use Core\MVC\View\View;
 /**
  * 基本页面视图
  */
-class SimpleView extends View {
+class SimpleView implements View {
 	private $viewDatas;
 
-	private $viewFile;
+	private $viewFile = '';
 
-	public function __construct($view) {
-		$this->viewFile = APP_PATH . DS . 'View' . $view . '.tpl.php';
+	public function __construct() {
+	}
+
+	public function setView($view) {
+		$this->viewFile = APP_PATH . DS . 'View' . DS . $view . '.tpl.php';
 	}
 
 	public function assign($key, $var) {
@@ -25,9 +28,9 @@ class SimpleView extends View {
 
 	public function display()
 	{
-		extract($this->viewDatas);
-
 		if(is_readable($this->viewFile)) {
+
+			extract($this->viewDatas);
 			ob_start();
 			include $this->viewFile;
 			$contents = ob_get_clean();
@@ -40,6 +43,7 @@ class SimpleView extends View {
 			}
 			else
 			{
+				header('Content-Type:application/json; charset=UTF-8');
 				return json_encode($this->viewDatas);
 			}
 		}
