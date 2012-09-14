@@ -2,15 +2,16 @@
 namespace Core\Monitor;
 
 use Core\Helper\FirePHP;
+use Core\Helper\ChromePhp;
 
 /**
  * 调试类
  */
 class Debug {
 	/**
-	 * @var \Core\Helper\FirePHP
+	 * @var
 	 */
-	private $firebug;
+	private $debuginstance;
 
 	/**
 	 * @var Debug
@@ -30,12 +31,27 @@ class Debug {
 	}
 
 	private function __construct() {
-		$this->firebug = new FirePHP();
 		$isdebug = \Core\Application::Instance()->GetConfig('debug');
-		$this->firebug->setEnabled($isdebug);
+		$debugtype = \Core\Application::Instance()->GetConfig('debugtype');
+
+		switch($debugtype) {
+			case 'firebug':
+				$this->debuginstance = FirePHP::getInstance();
+				break;
+			case 'chromephp':
+				$this->debuginstance = ChromePhp::getInstance();
+				break;
+			default:
+				$this->debuginstance = FirePHP::getInstance();
+				break;
+		}
+
+		$this->debuginstance->setEnabled($isdebug);
+//		$this->debuginstance = new FirePHP();
+//		$this->debuginstance->setEnabled($isdebug);
 	}
 
 	public function trace($vars, $label = 'TRACE', $method = FirePHP::INFO) {
-		call_user_func_array(array($this->firebug, $method), array($vars, $label));
+		call_user_func_array(array($this->debuginstance, $method), array($vars, $label));
 	}
 }

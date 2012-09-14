@@ -10,10 +10,8 @@ class CoreError extends \Exception
 {
 	public function __construct( $lankey, $params = array(), $code = 0 )
 	{
-		$msgtpl = Language::Instance()->get( $lankey, 'core' );
-		$message = vsprintf( $msgtpl, $params );
+		$message = Language::G($lankey, $params);
+
 		parent::__construct($message, $code);
 	}
-
-
 }

@@ -27,6 +27,22 @@ class Language
 	}
 
 	/**
+	 * 返回语言文件
+	 * @param string $key
+	 * @param mixed $params
+	 * @param string $namespace
+	 * @return string
+	 */
+	public static function G($key, $params = null, $namespace = 'core') {
+		if( $params == null ) {
+			return Language::Instance()->get($key, $namespace);
+		} else {
+			$tpl = Language::Instance()->get($key, $namespace);
+			return vsprintf($tpl, $params);
+		}
+	}
+
+	/**
 	 * @var array
 	 */
 	private $langdata;
