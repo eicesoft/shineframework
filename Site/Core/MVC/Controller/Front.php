@@ -104,7 +104,8 @@ class Front
 		$view = $this->router->getController() . DS . $this->router->getAction();
 		$this->view->setView($view);
 		$this->view->assigns($datas);
-		echo $this->view->display();
+		
+		return $this->view->display();
 	}
 
 	/**

@@ -23,4 +23,28 @@ class HttpPlugin implements IPlugin
 	{
 
 	}
+
+	public function endDispatcher() {
+		
+	}
+
+	public function endRouter() {
+		
+	}
+
+	public function endView($view) {
+		return $view;
+	}
+
+	public function startDispatcher() {
+		
+	}
+
+	public function startRouter() {
+		
+	}
+
+	public function startView($viewData) {
+		
+	}
 }

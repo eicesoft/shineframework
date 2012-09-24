@@ -1,0 +1,446 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+APP_PATH	api.php	/^define('APP_PATH', __DIR__ . DS . 'Site' . DS . 'App');$/;"	d
+APP_PATH	index.php	/^define('APP_PATH', __DIR__ . DS . 'Site' . DS . 'App');$/;"	d
+Action	Site/Core/MVC/Controller/Action.php	/^abstract class Action {$/;"	c
+Application	Site/Core/Application.php	/^class Application$/;"	c
+Autoload	Site/autoload.php	/^class Autoload$/;"	c
+CORE_PATH	Site/autoload.php	/^define('CORE_PATH', __DIR__);$/;"	d
+ChromePhp	Site/Core/Helper/ChromePhp.php	/^class ChromePhp$/;"	c
+CoreError	Site/Core/Error/CoreError.php	/^class CoreError extends \\Exception$/;"	c
+DBModel	Site/Core/MVC/Model/DBModel.php	/^class DBModel$/;"	c
+DS	Site/autoload.php	/^define('DS', DIRECTORY_SEPARATOR);$/;"	d
+Debug	Site/Core/Monitor/Debug.php	/^class Debug {$/;"	c
+Dispatcher	Site/Core/MVC/Controller/Dispatcher.php	/^abstract class Dispatcher$/;"	c
+E_DEPRECATED	Site/Core/Helper/FirePHP.php	/^    define('E_DEPRECATED', 8192);$/;"	d
+E_RECOVERABLE_ERROR	Site/Core/Helper/FirePHP.php	/^    define('E_RECOVERABLE_ERROR', 4096);$/;"	d
+E_STRICT	Site/Core/Helper/FirePHP.php	/^    define('E_STRICT', 2048);$/;"	d
+E_USER_DEPRECATED	Site/Core/Helper/FirePHP.php	/^    define('E_USER_DEPRECATED', 16384);$/;"	d
+EventManager	Site/Core/Event/EventManager.php	/^class EventManager$/;"	c
+FirePHP	Site/Core/Helper/FirePHP.php	/^class FirePHP {$/;"	c
+FlashDispatcher	Site/Core/MVC/Controller/Dispatcher/FlashDispatcher.php	/^class FlashDispatcher extends Dispatcher$/;"	c
+FlashRouter	Site/Core/MVC/Controller/Router/FlashRouter.php	/^class FlashRouter extends Router$/;"	c
+Front	Site/Core/MVC/Controller/Front.php	/^class Front$/;"	c
+G	Site/Core/Lang/Language.php	/^	public static function G($key, $params = null, $namespace = 'core') {$/;"	f
+GetConfig	Site/Core/Application.php	/^	public function GetConfig( $key )$/;"	f
+HttpPlugin	Site/Core/Plugin/HttpPlugin.php	/^class HttpPlugin implements IPlugin$/;"	c
+IEvent	Site/Core/Event/IEvent.php	/^interface IEvent$/;"	i
+IPlugin	Site/Core/Plugin/IPlugin.php	/^interface IPlugin$/;"	i
+IndexAction	Site/App/Controller/Index/IndexAction.php	/^class IndexAction extends Action{$/;"	c
+Instance	Site/Core/Application.php	/^	public static function Instance()$/;"	f
+Instance	Site/Core/Event/EventManager.php	/^	public static function Instance()$/;"	f
+Instance	Site/Core/Lang/Language.php	/^	public static function Instance()$/;"	f
+Instance	Site/Core/MVC/Controller/Front.php	/^	public static function Instance()$/;"	f
+Instance	Site/Core/Monitor/Debug.php	/^	public static function Instance() {$/;"	f
+Instance	Site/Core/Plugin/PluginManager.php	/^	public static function Instance()$/;"	f
+Label	Site/Core/Helper/FirePHP.php	/^                    $Label = func_get_arg(1);$/;"	v
+Label	Site/Core/Helper/FirePHP.php	/^            $Label = func_get_arg(1);$/;"	v
+Label	Site/Core/Helper/FirePHP.php	/^        $Label = null;$/;"	v
+Label	Site/Core/Helper/FirePHP.php	/^    public function error($Object, $Label = null, $Options = array())$/;"	v
+Label	Site/Core/Helper/FirePHP.php	/^    public function info($Object, $Label = null, $Options = array())$/;"	v
+Label	Site/Core/Helper/FirePHP.php	/^    public function log($Object, $Label = null, $Options = array())$/;"	v
+Label	Site/Core/Helper/FirePHP.php	/^    public function warn($Object, $Label = null, $Options = array())$/;"	v
+Language	Site/Core/Lang/Language.php	/^class Language$/;"	c
+Object	Site/Core/Helper/FirePHP.php	/^                        $Object = array($Label, $Object);$/;"	v
+Object	Site/Core/Helper/FirePHP.php	/^                    $Object = array('Class'=>isset($trace[$i]['class'])?$trace[$i]['class']:'',$/;"	v
+Object	Site/Core/Helper/FirePHP.php	/^                $Object = $this->encodeTable($Object);$/;"	v
+Object	Site/Core/Helper/FirePHP.php	/^                $Object = array('Class'=>get_class($Object),$/;"	v
+Object	Site/Core/Helper/FirePHP.php	/^            $Object = $this->encodeObject($Object);$/;"	v
+ObjectDepth	Site/Core/Helper/FirePHP.php	/^    protected function encodeObject($Object, $ObjectDepth = 1, $ArrayDepth = 1, $MaxDepth = 1)$/;"	v
+Options	Site/Core/Helper/FirePHP.php	/^            $Options = func_get_arg(3);$/;"	v
+Options	Site/Core/Helper/FirePHP.php	/^        $Options = array();$/;"	v
+Options	Site/Core/Helper/FirePHP.php	/^    public function dump($Key, $Variable, $Options = array())$/;"	v
+Options	Site/Core/Helper/FirePHP.php	/^    public function group($Name, $Options = null)$/;"	v
+Options	Site/Core/Helper/FirePHP.php	/^    public function table($Label, $Table, $Options = array())$/;"	v
+PDODataSource	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^class PDODataSource {$/;"	c
+PluginManager	Site/Core/Plugin/PluginManager.php	/^class PluginManager$/;"	c
+Router	Site/Core/MVC/Controller/Router.php	/^abstract class Router$/;"	c
+Service	Site/Core/Business/Service.php	/^class Service {$/;"	c
+SimpleView	Site/Core/MVC/View/SimpleView.php	/^class SimpleView implements View {$/;"	c
+TestService	Site/App/Service/TestService.php	/^class TestService {$/;"	c
+Type	Site/Core/Helper/FirePHP.php	/^                    $Type = func_get_arg(1);$/;"	v
+Type	Site/Core/Helper/FirePHP.php	/^                $Type = self::EXCEPTION;$/;"	v
+Type	Site/Core/Helper/FirePHP.php	/^                $Type = self::LOG;$/;"	v
+Type	Site/Core/Helper/FirePHP.php	/^            $Type = func_get_arg(2);$/;"	v
+Type	Site/Core/Helper/FirePHP.php	/^            $Type = self::EXCEPTION;$/;"	v
+Type	Site/Core/Helper/FirePHP.php	/^        $Type = null;$/;"	v
+View	Site/Core/MVC/View/View.php	/^interface View {$/;"	i
+WebDispatcher	Site/Core/MVC/Controller/Dispatcher/WebDispatcher.php	/^class WebDispatcher extends Dispatcher$/;"	c
+WebRouter	Site/Core/MVC/Controller/Router/WebRouter.php	/^class WebRouter extends Router$/;"	c
+__construct	Site/Core/Application.php	/^	private function __construct()$/;"	f
+__construct	Site/Core/Error/CoreError.php	/^	public function __construct( $lankey, $params = array(), $code = 0 )$/;"	f
+__construct	Site/Core/Event/EventManager.php	/^	private function __construct()$/;"	f
+__construct	Site/Core/Helper/ChromePhp.php	/^	private function __construct()$/;"	f
+__construct	Site/Core/Lang/Language.php	/^	private function __construct()$/;"	f
+__construct	Site/Core/MVC/Controller/Front.php	/^	private function __construct()$/;"	f
+__construct	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^	public function __construct($config) {$/;"	f
+__construct	Site/Core/MVC/View/SimpleView.php	/^	public function __construct() {$/;"	f
+__construct	Site/Core/Monitor/Debug.php	/^	private function __construct() {$/;"	f
+__construct	Site/Core/Plugin/PluginManager.php	/^	private function __construct()$/;"	f
+__sleep	Site/Core/Helper/FirePHP.php	/^    public function __sleep()$/;"	f
+_addRow	Site/Core/Helper/ChromePhp.php	/^	protected function _addRow( $label, $log, $backtrace, $type )$/;"	f
+_backtraces	Site/Core/Helper/ChromePhp.php	/^	protected $_backtraces = array();$/;"	v
+_cached_headers	Site/Core/Helper/FirePHP.php	/^        return $_cached_headers = $headers;$/;"	v
+_cached_headers	Site/Core/Helper/FirePHP.php	/^        static $_cached_headers = false;$/;"	v
+_call	Site/Core/MVC/Controller/Dispatcher.php	/^	protected function _call($controller, $action, $params) {$/;"	f
+_convert	Site/Core/Helper/ChromePhp.php	/^	protected function _convert( $object )$/;"	f
+_createAction	Site/Core/MVC/Controller/Dispatcher.php	/^	private function _createAction($controller, $action) {$/;"	f
+_encode	Site/Core/Helper/ChromePhp.php	/^	protected function _encode( $data )$/;"	f
+_error_triggered	Site/Core/Helper/ChromePhp.php	/^	protected $_error_triggered = false;$/;"	v
+_escapeTrace	Site/Core/Helper/FirePHP.php	/^    protected function _escapeTrace($Trace)$/;"	f
+_escapeTraceFile	Site/Core/Helper/FirePHP.php	/^    protected function _escapeTraceFile($File)$/;"	f
+_getPropertyKey	Site/Core/Helper/ChromePhp.php	/^	protected function _getPropertyKey( ReflectionProperty $property )$/;"	f
+_instance	Site/Core/Helper/ChromePhp.php	/^	protected static $_instance;$/;"	v
+_json	Site/Core/Helper/ChromePhp.php	/^	protected $_json = array($/;"	v
+_load	Site/Core/Lang/Language.php	/^	private function _load( $namespace )$/;"	f
+_loadAction	Site/Core/MVC/Controller/Dispatcher.php	/^	private function _loadAction($controller, $action) {$/;"	f
+_loadAppConfig	Site/Core/Application.php	/^	private function _loadAppConfig()$/;"	f
+_log	Site/Core/Helper/ChromePhp.php	/^	protected static function _log( array $args )$/;"	f
+_php_version	Site/Core/Helper/ChromePhp.php	/^		$this->_php_version = phpversion();$/;"	v
+_php_version	Site/Core/Helper/ChromePhp.php	/^	protected $_php_version;$/;"	v
+_processed	Site/Core/Helper/ChromePhp.php	/^	protected $_processed = array();$/;"	v
+_settings	Site/Core/Helper/ChromePhp.php	/^	protected $_settings = array($/;"	v
+_standardizePath	Site/Core/Helper/FirePHP.php	/^    protected function _standardizePath($Path)$/;"	f
+_timestamp	Site/Core/Helper/ChromePhp.php	/^		$this->_timestamp = $this->_php_version >= 5.1 ? $_SERVER['REQUEST_TIME'] : time();$/;"	v
+_timestamp	Site/Core/Helper/ChromePhp.php	/^	protected $_timestamp;$/;"	v
+_writeHeader	Site/Core/Helper/ChromePhp.php	/^	protected function _writeHeader( $data )$/;"	f
+action	Site/Core/MVC/Controller/Dispatcher.php	/^		$action = $this->_createAction($controller, $action);$/;"	v
+action	Site/Core/MVC/Controller/Router/WebRouter.php	/^				$this->action = 'Index';$/;"	v
+action	Site/Core/MVC/Controller/Router/WebRouter.php	/^			$this->action = 'Index';$/;"	v
+action	Site/Core/MVC/Controller/Router/WebRouter.php	/^	private $action;$/;"	v
+addSetting	Site/Core/Helper/ChromePhp.php	/^	public function addSetting( $key, $value )$/;"	f
+addSettings	Site/Core/Helper/ChromePhp.php	/^	public function addSettings( array $settings )$/;"	f
+app	Site/Core/Lang/Language.php	/^		$app = Application::Instance();$/;"	v
+app	api.php	/^	$app = Application::Instance();$/;"	v
+app	index.php	/^	$app = Application::Instance();$/;"	v
+appconfigs	Site/Core/Application.php	/^		$this->appconfigs = require(__DIR__ . DS . 'appconfig.php');$/;"	v
+appconfigs	Site/Core/Application.php	/^	private $appconfigs;$/;"	v
+apppath	Site/Core/Application.php	/^		$this->apppath = $apppath;$/;"	v
+apppath	Site/Core/Application.php	/^	private $apppath;$/;"	v
+args	Site/Core/Helper/ChromePhp.php	/^		$args = func_get_args();$/;"	v
+args	Site/Core/Helper/FirePHP.php	/^        $args = func_get_args();$/;"	v
+ascii	Site/Core/Helper/FirePHP.php	/^                $ascii = '';$/;"	v
+assertionHandler	Site/Core/Helper/FirePHP.php	/^    public function assertionHandler($file, $line, $code)$/;"	f
+assign	Site/Core/MVC/View/SimpleView.php	/^	public function assign($key, $var) {$/;"	f
+assign	Site/Core/MVC/View/View.php	/^	public function assign($key, $var);$/;"	f
+assigns	Site/Core/MVC/View/SimpleView.php	/^	public function assigns($vars) {$/;"	f
+assigns	Site/Core/MVC/View/View.php	/^	public function assigns($vars);$/;"	f
+b	Site/Core/Helper/FirePHP.php	/^                    $b=ord($str[$i]);$/;"	v
+backtrace	Site/Core/Helper/ChromePhp.php	/^			$backtrace = null;$/;"	v
+backtrace	Site/Core/Helper/ChromePhp.php	/^		$backtrace = debug_backtrace( false );$/;"	v
+backtrace_message	Site/Core/Helper/ChromePhp.php	/^			$backtrace_message = $backtrace[$level]['file'] . ' : ' . $backtrace[$level]['line'];$/;"	v
+backtrace_message	Site/Core/Helper/ChromePhp.php	/^		$backtrace_message = 'unknown';$/;"	v
+bits	Site/Core/Helper/FirePHP.php	/^                elseif ($c >= 192) $bits=2;$/;"	v
+bits	Site/Core/Helper/FirePHP.php	/^                elseif ($c >= 224) $bits=3;$/;"	v
+bits	Site/Core/Helper/FirePHP.php	/^                elseif ($c >= 240) $bits=4;$/;"	v
+bits	Site/Core/Helper/FirePHP.php	/^                elseif ($c >= 248) $bits=5;$/;"	v
+bits	Site/Core/Helper/FirePHP.php	/^                elseif ($c >= 252) $bits=6;$/;"	v
+bits	Site/Core/Helper/FirePHP.php	/^        $bits=0;$/;"	v
+c	Site/Core/Helper/FirePHP.php	/^            $c=ord($str[$i]);$/;"	v
+c	Site/Core/Helper/FirePHP.php	/^        $c=0; $b=0;$/;"	v
+char	Site/Core/Helper/FirePHP.php	/^                            $char = pack('C*', $ord_var_c, ord($var{$c + 1}));$/;"	v
+char	Site/Core/Helper/FirePHP.php	/^                            $char = pack('C*', $ord_var_c,$/;"	v
+class	Site/Core/Helper/FirePHP.php	/^            $return['__className'] = $class = get_class($Object);$/;"	v
+className	Site/Core/MVC/Controller/Dispatcher.php	/^		$className = 'App\\\\Controller\\\\' . $controller . '\\\\' . $action . 'Action';$/;"	v
+className	Site/autoload.php	/^		$className = str_replace( "\\\\", DS, $className );$/;"	v
+class_lower	Site/Core/Helper/FirePHP.php	/^            $class_lower = strtolower($class);$/;"	v
+contents	Site/Core/MVC/View/SimpleView.php	/^			$contents = ob_get_clean();$/;"	v
+controller	Site/Core/MVC/Controller/Router/WebRouter.php	/^				$this->controller = 'Index';$/;"	v
+controller	Site/Core/MVC/Controller/Router/WebRouter.php	/^			$this->controller = 'Index';$/;"	v
+controller	Site/Core/MVC/Controller/Router/WebRouter.php	/^	private $controller;$/;"	v
+convertAssertionErrorsToExceptions	Site/Core/Helper/FirePHP.php	/^        $this->convertAssertionErrorsToExceptions = $convertAssertionErrorsToExceptions;$/;"	v
+convertAssertionErrorsToExceptions	Site/Core/Helper/FirePHP.php	/^    protected $convertAssertionErrorsToExceptions = true;$/;"	v
+debuginstance	Site/Core/Monitor/Debug.php	/^				$this->debuginstance = ChromePhp::getInstance();$/;"	v
+debuginstance	Site/Core/Monitor/Debug.php	/^				$this->debuginstance = new FirePHP();$/;"	v
+debuginstance	Site/Core/Monitor/Debug.php	/^	private $debuginstance;$/;"	v
+debuginstance	Site/Core/Monitor/Debug.php	/^\/\/		$this->debuginstance = new FirePHP();-$/;"	v
+debugtype	Site/Core/Monitor/Debug.php	/^		$debugtype = \\Core\\Application::Instance()->GetConfig('debugtype');$/;"	v
+detectClientExtension	Site/Core/Helper/FirePHP.php	/^    public function detectClientExtension()$/;"	f
+dispatcher	Site/Core/MVC/Controller/Front.php	/^				$this->dispatcher = new \\Core\\MVC\\Controller\\Dispatcher\\FlashDispatcher();$/;"	v
+dispatcher	Site/Core/MVC/Controller/Front.php	/^				$this->dispatcher = new \\Core\\MVC\\Controller\\Dispatcher\\WebDispatcher();$/;"	v
+dispatcher	Site/Core/MVC/Controller/Front.php	/^	private $dispatcher;$/;"	v
+display	Site/Core/MVC/Controller/Front.php	/^	public function display($datas) {$/;"	f
+display	Site/Core/MVC/View/SimpleView.php	/^	public function display()$/;"	f
+display	Site/Core/MVC/View/View.php	/^	public function display();$/;"	f
+dns	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^		$dns = '';$/;"	v
+dump	Site/Core/Helper/FirePHP.php	/^    public function dump($Key, $Variable, $Options = array())$/;"	f
+elements	Site/Core/Helper/FirePHP.php	/^                $elements = array_map(array($this, 'json_encode'), $var);$/;"	v
+enabled	Site/Core/Helper/FirePHP.php	/^       $this->enabled = $Enabled;$/;"	v
+enabled	Site/Core/Helper/FirePHP.php	/^    protected $enabled = true;$/;"	v
+encodeObject	Site/Core/Helper/FirePHP.php	/^    protected function encodeObject($Object, $ObjectDepth = 1, $ArrayDepth = 1, $MaxDepth = 1)$/;"	f
+encodeTable	Site/Core/Helper/FirePHP.php	/^    protected function encodeTable($Table)$/;"	f
+encoded_value	Site/Core/Helper/FirePHP.php	/^        $encoded_value = $this->json_encode($value);$/;"	v
+end	api.php	/^$end = microtime(true);$/;"	v
+end	index.php	/^$end = microtime(true);$/;"	v
+error	Site/Core/Helper/ChromePhp.php	/^	public static function error()$/;"	f
+error	Site/Core/Helper/FirePHP.php	/^    public function error($Object, $Label = null, $Options = array())$/;"	f
+errorHandler	Site/Core/Helper/FirePHP.php	/^    public function errorHandler($errno, $errstr, $errfile, $errline, $errcontext)$/;"	f
+events	Site/Core/Event/EventManager.php	/^		$this->events = array();$/;"	v
+events	Site/Core/Event/EventManager.php	/^	private $events;$/;"	v
+exception	Site/Core/Helper/FirePHP.php	/^            $exception = new ErrorException($errstr, 0, $errno, $errfile, $errline);$/;"	v
+exception	Site/Core/Helper/FirePHP.php	/^          $exception = new ErrorException('Assertion Failed - Code[ '.$code.' ]', 0, null, $file, $line);$/;"	v
+exceptionHandler	Site/Core/Helper/FirePHP.php	/^    function exceptionHandler($Exception)$/;"	f
+execData	Site/Core/Application.php	/^		$execData = $this->front->execute();$/;"	v
+execute	Site/App/Controller/Index/IndexAction.php	/^	public function execute($param) {$/;"	f
+execute	Site/Core/Event/IEvent.php	/^	public function execute( $params );$/;"	f
+execute	Site/Core/MVC/Controller/Action.php	/^	public abstract function execute($param);$/;"	f
+execute	Site/Core/MVC/Controller/Dispatcher.php	/^	public abstract function execute();$/;"	f
+execute	Site/Core/MVC/Controller/Dispatcher/FlashDispatcher.php	/^	public function execute()$/;"	f
+execute	Site/Core/MVC/Controller/Dispatcher/WebDispatcher.php	/^	public function execute()$/;"	f
+execute	Site/Core/MVC/Controller/Front.php	/^	public function execute() {$/;"	f
+execute	Site/Core/Plugin/HttpPlugin.php	/^	public function execute()$/;"	f
+execute	Site/Core/Plugin/IPlugin.php	/^	public function execute();$/;"	f
+fb	Site/Core/Helper/FirePHP.php	/^    public function fb($Object)$/;"	f
+fetchStyle	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^	private $fetchStyle = \\PDO::FETCH_ASSOC;$/;"	v
+file	Site/Core/Helper/FirePHP.php	/^            $file = preg_replace('\/\\\\\\\\+\/','\\\\',$File);$/;"	v
+file	Site/Core/MVC/Controller/Dispatcher.php	/^		$file = APP_PATH . DS . 'Controller' . DS  . $controller . DS . $action . 'Action.php';$/;"	v
+file	Site/autoload.php	/^		$file = CORE_PATH . DS . $className . '.php';$/;"	v
+for	Site/Core/Helper/FirePHP.php	/^    * array-walking function for use in generating JSON-formatted name-value pairs$/;"	f
+front	Site/Core/Application.php	/^		$this->front = Front::Instance();$/;"	v
+front	Site/Core/Application.php	/^	private $front;$/;"	v
+get	Site/Core/Lang/Language.php	/^	public function get( $key, $namespace = 'core' )$/;"	f
+getAction	Site/Core/MVC/Controller/Router/WebRouter.php	/^	public function getAction()$/;"	f
+getAllRequestHeaders	Site/Core/Helper/FirePHP.php	/^    public static function getAllRequestHeaders() {$/;"	f
+getAppPath	Site/Core/Application.php	/^	public function getAppPath()$/;"	f
+getController	Site/Core/MVC/Controller/Router/WebRouter.php	/^	public function getController()$/;"	f
+getEnabled	Site/Core/Helper/FirePHP.php	/^    public function getEnabled()$/;"	f
+getInstance	Site/Core/Helper/ChromePhp.php	/^	public static function getInstance()$/;"	f
+getInstance	Site/Core/Helper/FirePHP.php	/^    public static function getInstance($AutoCreate = false)$/;"	f
+getOption	Site/Core/Helper/FirePHP.php	/^    public function getOption($Name)$/;"	f
+getOptions	Site/Core/Helper/FirePHP.php	/^    public function getOptions()$/;"	f
+getParams	Site/Core/MVC/Controller/Router/WebRouter.php	/^	public function getParams()$/;"	f
+getRequestHeader	Site/Core/Helper/FirePHP.php	/^    protected function getRequestHeader($Name)$/;"	f
+getSetting	Site/Core/Helper/ChromePhp.php	/^	public function getSetting( $key )$/;"	f
+getUserAgent	Site/Core/Helper/FirePHP.php	/^    protected function getUserAgent()$/;"	f
+group	Site/Core/Helper/ChromePhp.php	/^	public static function group()$/;"	f
+group	Site/Core/Helper/FirePHP.php	/^                	$group = array_pop($insightGroupStack);$/;"	v
+group	Site/Core/Helper/FirePHP.php	/^    public function group($Name, $Options = null)$/;"	f
+groupCollapsed	Site/Core/Helper/ChromePhp.php	/^	public static function groupCollapsed()$/;"	f
+groupEnd	Site/Core/Helper/ChromePhp.php	/^	public static function groupEnd()$/;"	f
+groupEnd	Site/Core/Helper/FirePHP.php	/^    public function groupEnd()$/;"	f
+handle	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^			$this->handle = new \\PDO($dns, $config['user'], $config['password']);$/;"	v
+handle	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^	private $handle;$/;"	v
+headers	Site/Core/Helper/FirePHP.php	/^        $headers = array();$/;"	v
+headers	Site/Core/Helper/FirePHP.php	/^        $headers = self::getAllRequestHeaders();$/;"	v
+headersSent	Site/Core/Helper/FirePHP.php	/^    protected function headersSent(&$Filename, &$Linenum)$/;"	f
+i	Site/Core/Helper/FirePHP.php	/^                for( $i=0 ; $trace && $i<sizeof($trace) ; $i++ ) {$/;"	v
+i	Site/Core/Helper/FirePHP.php	/^            for( $i=0 ; $i<sizeof($trace) ; $i++ ) {$/;"	v
+i	Site/Core/Helper/FirePHP.php	/^        for( $i=0 ; $i<count($parts) ; $i++) {$/;"	v
+i	Site/Core/Helper/FirePHP.php	/^        for( $i=0 ; $i<sizeof($Trace) ; $i++ ) {$/;"	v
+inExceptionHandler	Site/Core/Helper/FirePHP.php	/^        $this->inExceptionHandler = false;$/;"	v
+inExceptionHandler	Site/Core/Helper/FirePHP.php	/^        $this->inExceptionHandler = true;$/;"	v
+inExceptionHandler	Site/Core/Helper/FirePHP.php	/^    protected $inExceptionHandler = false;$/;"	v
+info	Site/Core/Helper/ChromePhp.php	/^	public static function info()$/;"	f
+info	Site/Core/Helper/FirePHP.php	/^    public function info($Object, $Label = null, $Options = array())$/;"	f
+init	Site/Core/Helper/FirePHP.php	/^    public static function init()$/;"	f
+init	Site/Core/MVC/Controller/Dispatcher.php	/^	public abstract function init();$/;"	f
+init	Site/Core/MVC/Controller/Dispatcher/FlashDispatcher.php	/^	public function init()$/;"	f
+init	Site/Core/MVC/Controller/Dispatcher/WebDispatcher.php	/^	public function init()$/;"	f
+init	Site/Core/MVC/Controller/Front.php	/^	public function init()$/;"	f
+init	Site/Core/MVC/Controller/Router.php	/^	public abstract function init();$/;"	f
+init	Site/Core/MVC/Controller/Router/FlashRouter.php	/^	public function init()$/;"	f
+init	Site/Core/MVC/Controller/Router/WebRouter.php	/^	public function init()$/;"	f
+init	Site/autoload.php	/^	public static function init()$/;"	f
+initDispatcher	Site/Core/MVC/Controller/Front.php	/^	public function initDispatcher() {$/;"	f
+initRouter	Site/Core/MVC/Controller/Front.php	/^	public function initRouter()$/;"	f
+insightGroupStack	Site/Core/Helper/FirePHP.php	/^        static $insightGroupStack = array();$/;"	v
+instance	Site/Core/Application.php	/^	private static $instance = null;$/;"	v
+instance	Site/Core/Event/EventManager.php	/^	private static $instance = null;$/;"	v
+instance	Site/Core/Helper/FirePHP.php	/^        $instance = self::getInstance();$/;"	v
+instance	Site/Core/Helper/FirePHP.php	/^    protected static $instance = null;$/;"	v
+instance	Site/Core/Lang/Language.php	/^	private static $instance = null;$/;"	v
+instance	Site/Core/MVC/Controller/Front.php	/^	private static $instance = null;$/;"	v
+instance	Site/Core/Monitor/Debug.php	/^	private static $instance = null;$/;"	v
+instance	Site/Core/Plugin/PluginManager.php	/^	private static $instance = null;$/;"	v
+isEnabled	Site/Core/Helper/ChromePhp.php	/^		$this->isEnabled = $isEnabled;$/;"	v
+isEnabled	Site/Core/Helper/ChromePhp.php	/^	private $isEnabled = true;$/;"	v
+is_utf8	Site/Core/Helper/FirePHP.php	/^    protected static function is_utf8($str)$/;"	f
+isdebug	Site/Core/Monitor/Debug.php	/^		$isdebug = \\Core\\Application::Instance()->GetConfig('debug');$/;"	v
+jsonEncode	Site/Core/Helper/FirePHP.php	/^    public function jsonEncode($Object, $skipObjectEncode = false)$/;"	f
+json_encode	Site/Core/Helper/FirePHP.php	/^    private function json_encode($var)$/;"	f
+json_name_value	Site/Core/Helper/FirePHP.php	/^    private function json_name_value($name, $value)$/;"	f
+json_objectStack	Site/Core/Helper/FirePHP.php	/^    private $json_objectStack = array();$/;"	v
+json_utf82utf16	Site/Core/Helper/FirePHP.php	/^    private function json_utf82utf16($utf8)$/;"	f
+key	Site/Core/Helper/ChromePhp.php	/^		foreach ( $object_vars as $key => $value ) {$/;"	v
+key	Site/Core/Helper/ChromePhp.php	/^		foreach ( $settings as $key => $value ) {$/;"	v
+key	Site/Core/Helper/FirePHP.php	/^            foreach ($Object as $key => $val) {$/;"	v
+label	Site/Core/Helper/ChromePhp.php	/^			$label = $args[0];$/;"	v
+label	Site/Core/Helper/ChromePhp.php	/^		$label = null;$/;"	v
+label	Site/Core/Monitor/Debug.php	/^	public function trace($vars, $label = 'TRACE', $method = FirePHP::INFO) {$/;"	v
+langdata	Site/Core/Lang/Language.php	/^		$this->langdata = array();$/;"	v
+langdata	Site/Core/Lang/Language.php	/^	private $langdata;$/;"	v
+langpath	Site/Core/Lang/Language.php	/^		$this->langpath = $app->getAppPath() . DS . 'Lang' . DS . $app->GetConfig( 'lang' ) . DS;$/;"	v
+langpath	Site/Core/Lang/Language.php	/^	private $langpath;$/;"	v
+len	Site/Core/Helper/FirePHP.php	/^        $len=strlen($str);$/;"	v
+level	Site/Core/Helper/ChromePhp.php	/^		$level = $logger->getSetting( self::BACKTRACE_LEVEL );$/;"	v
+loader	Site/autoload.php	/^	public static function loader( $className )$/;"	f
+loaderfile	Site/autoload.php	/^	public static $loaderfile = array();$/;"	v
+log	Site/Core/Helper/ChromePhp.php	/^	public static function log()$/;"	f
+log	Site/Core/Helper/FirePHP.php	/^    public function log($Object, $Label = null, $Options = array())$/;"	f
+logToInsightConsole	Site/Core/Helper/FirePHP.php	/^            $this->logToInsightConsole = $console;$/;"	v
+logToInsightConsole	Site/Core/Helper/FirePHP.php	/^            $this->logToInsightConsole = $this->to('request')->console($console);$/;"	v
+logToInsightConsole	Site/Core/Helper/FirePHP.php	/^    protected $logToInsightConsole = null;$/;"	v
+logger	Site/Core/Helper/ChromePhp.php	/^		$logger = self::getInstance();$/;"	v
+members	Site/Core/Helper/FirePHP.php	/^            $members = (array)$Object;$/;"	v
+message	Site/Core/Error/CoreError.php	/^		$message = Language::G($lankey, $params);$/;"	v
+messageIndex	Site/Core/Helper/FirePHP.php	/^    protected $messageIndex = 1;$/;"	v
+meta	Site/Core/Helper/FirePHP.php	/^        $meta = array();$/;"	v
+mode	Site/Core/Application.php	/^		$this->mode = $mode;$/;"	v
+mode	Site/Core/Application.php	/^	private $mode;$/;"	v
+mode	Site/Core/MVC/Controller/Front.php	/^		$this->mode = $mode;$/;"	v
+mode	Site/Core/MVC/Controller/Front.php	/^	private $mode;$/;"	v
+monitor	Site/Core/Business/Service.php	/^	private $monitor;$/;"	v
+monitor	Site/Core/MVC/Controller/Action.php	/^	private $monitor;$/;"	v
+msg	Site/Core/Helper/FirePHP.php	/^                $msg = $msg->label($Label);$/;"	v
+msg	Site/Core/Helper/FirePHP.php	/^            $msg = $this->logToInsightConsole;$/;"	v
+msg	Site/Core/Helper/FirePHP.php	/^            $msg = '['.$this->jsonEncode($msg_meta).','.$this->jsonEncode($Object, $skipFinalObjectEncode).']';$/;"	v
+msg	Site/Core/Helper/FirePHP.php	/^            $msg = '{"'.$Label.'":'.$this->jsonEncode($Object, $skipFinalObjectEncode).'}';$/;"	v
+msg_meta	Site/Core/Helper/FirePHP.php	/^            $msg_meta = $Options;$/;"	v
+name	Site/Core/Helper/ChromePhp.php	/^		\/\/ first add the class name$/;"	c
+name	Site/Core/Helper/FirePHP.php	/^                    $name = $parts[2];$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                    $name = 'private:'.$name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                    $name = 'protected:'.$name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                    $name = 'public:'.$name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                    $name = 'static:'.$name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                    $name = 'undeclared:'.$name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                $name = $raw_name = $plain_name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^                $name = $raw_name;$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^            foreach( getallheaders() as $name => $value ) {$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^            foreach($_SERVER as $name => $value) {$/;"	v
+name	Site/Core/Helper/FirePHP.php	/^     * @param string $Class The class name of the object$/;"	c
+namespace	Site/Core/Lang/Language.php	/^	public function get( $key, $namespace = 'core' )$/;"	v
+newException	Site/Core/Helper/FirePHP.php	/^    protected function newException($Message)$/;"	f
+new_row	Site/Core/Helper/FirePHP.php	/^                $new_row = array();$/;"	v
+new_table	Site/Core/Helper/FirePHP.php	/^        $new_table = array();$/;"	v
+objectFilters	Site/Core/Helper/FirePHP.php	/^    protected $objectFilters = array($/;"	v
+objectStack	Site/Core/Helper/FirePHP.php	/^    protected $objectStack = array();$/;"	v
+object_as_array	Site/Core/Helper/ChromePhp.php	/^		$object_as_array = array();$/;"	v
+object_vars	Site/Core/Helper/ChromePhp.php	/^		$object_vars = get_object_vars( $object );$/;"	v
+options	Site/Core/Helper/FirePHP.php	/^        $this->options = array_merge($this->options,$Options);$/;"	v
+options	Site/Core/Helper/FirePHP.php	/^    protected $options = array('maxDepth' => 10,$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x08:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x09:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x0A:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x0C:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x0D:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x22:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x2F:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                        case $ord_var_c == 0x5C:$/;"	v
+ord_var_c	Site/Core/Helper/FirePHP.php	/^                    $ord_var_c = ord($var{$c});$/;"	v
+params	Site/Core/Error/CoreError.php	/^	public function __construct( $lankey, $params = array(), $code = 0 )$/;"	v
+params	Site/Core/Lang/Language.php	/^		if( $params == null ) {$/;"	v
+params	Site/Core/Lang/Language.php	/^	public static function G($key, $params = null, $namespace = 'core') {$/;"	v
+params	Site/Core/MVC/Controller/Router/WebRouter.php	/^		$this->params = $_GET;$/;"	v
+params	Site/Core/MVC/Controller/Router/WebRouter.php	/^	private $params;$/;"	v
+part	Site/Core/Helper/FirePHP.php	/^            $part = $parts[$i];$/;"	v
+parts	Site/Core/Helper/FirePHP.php	/^                    $parts = explode("\\0", $name);$/;"	v
+parts	Site/Core/Helper/FirePHP.php	/^        $parts = explode("\\n",chunk_split($msg, 5000, "\\n"));$/;"	v
+path	Site/Core/Lang/Language.php	/^			$path = $this->langpath . $namespace . '.lang.php';$/;"	v
+pathinfo	Site/Core/MVC/Controller/Router/WebRouter.php	/^			$pathinfo = explode('&', $qstring);$/;"	v
+pdostmt	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^		$pdostmt = $this->handle->prepare($sql);$/;"	v
+plain_name	Site/Core/Helper/FirePHP.php	/^                $plain_name = $name;$/;"	v
+plain_name	Site/Core/Helper/FirePHP.php	/^            foreach( $properties as $plain_name => $property ) {$/;"	v
+plugin	Site/Core/Helper/FirePHP.php	/^    public static function plugin()$/;"	f
+plugins	Site/Core/Plugin/PluginManager.php	/^		$this->plugins = array();$/;"	v
+plugins	Site/Core/Plugin/PluginManager.php	/^	private $plugins;$/;"	v
+properties	Site/Core/Helper/FirePHP.php	/^                    $properties = array_map(array($this, 'json_name_value'),$/;"	v
+properties	Site/Core/Helper/FirePHP.php	/^                $properties = array_map(array($this, 'json_name_value'),$/;"	v
+properties	Site/Core/Helper/FirePHP.php	/^            $properties = array();$/;"	v
+qstring	Site/Core/MVC/Controller/Router/WebRouter.php	/^		$qstring = $_SERVER['QUERY_STRING'];$/;"	v
+query	Site/Core/MVC/Model/DataSource/PDODataSource.php	/^	public function query($sql) {$/;"	f
+raw_name	Site/Core/Helper/FirePHP.php	/^                    $raw_name = "\\0".$class."\\0".$raw_name;$/;"	v
+raw_name	Site/Core/Helper/FirePHP.php	/^                    $raw_name = "\\0".'*'."\\0".$raw_name;$/;"	v
+raw_name	Site/Core/Helper/FirePHP.php	/^            foreach( $members as $raw_name => $value ) {$/;"	v
+reflection	Site/Core/Helper/ChromePhp.php	/^		$reflection = new ReflectionClass($object);$/;"	v
+reflectionClass	Site/Core/Helper/FirePHP.php	/^            $reflectionClass = new \\ReflectionClass($class);$/;"	v
+registerAssertionHandler	Site/Core/Helper/FirePHP.php	/^    public function registerAssertionHandler($convertAssertionErrorsToExceptions = true, $throwAssertionExceptions = false)$/;"	f
+registerErrorHandler	Site/Core/Helper/FirePHP.php	/^    public function registerErrorHandler($throwErrorExceptions = false)$/;"	f
+registerExceptionHandler	Site/Core/Helper/FirePHP.php	/^    public function registerExceptionHandler()$/;"	f
+registry	Site/Core/Event/EventManager.php	/^	public function registry( $eventName )$/;"	f
+registry	Site/Core/Plugin/HttpPlugin.php	/^	public function registry()$/;"	f
+registry	Site/Core/Plugin/IPlugin.php	/^	public function registry();$/;"	f
+registry	Site/Core/Plugin/PluginManager.php	/^	public function registry( $pluginName )$/;"	f
+return	Site/Core/Helper/FirePHP.php	/^        $return = array();$/;"	v
+router	Site/Core/MVC/Controller/Dispatcher.php	/^		$this->router = $router;$/;"	v
+router	Site/Core/MVC/Controller/Dispatcher.php	/^	protected $router;$/;"	v
+router	Site/Core/MVC/Controller/Front.php	/^				$this->router = new \\Core\\MVC\\Controller\\Router\\FlashRouter();$/;"	v
+router	Site/Core/MVC/Controller/Front.php	/^				$this->router = new \\Core\\MVC\\Controller\\Router\\WebRouter();$/;"	v
+router	Site/Core/MVC/Controller/Front.php	/^	private $router;$/;"	v
+row	Site/Core/Helper/ChromePhp.php	/^		$row = array($label, $log, $backtrace, $type);$/;"	v
+run	Site/Core/Application.php	/^	public function run()$/;"	f
+setAppPath	Site/Core/Application.php	/^	public function setAppPath( $apppath )$/;"	f
+setEnabled	Site/Core/Helper/ChromePhp.php	/^	public function setEnabled($isEnabled) {$/;"	f
+setEnabled	Site/Core/Helper/FirePHP.php	/^    public function setEnabled($Enabled)$/;"	f
+setHeader	Site/Core/Helper/FirePHP.php	/^    protected function setHeader($Name, $Value)$/;"	f
+setInstance	Site/Core/Helper/FirePHP.php	/^    public static function setInstance($instance)$/;"	f
+setLogToInsightConsole	Site/Core/Helper/FirePHP.php	/^    public function setLogToInsightConsole($console)$/;"	f
+setMode	Site/Core/Application.php	/^	public function setMode( $mode )$/;"	f
+setMode	Site/Core/MVC/Controller/Front.php	/^	public function setMode( $mode )$/;"	f
+setObjectFilter	Site/Core/Helper/FirePHP.php	/^    public function setObjectFilter($Class, $Filter)$/;"	f
+setOption	Site/Core/Helper/FirePHP.php	/^    public function setOption($Name, $Value)$/;"	f
+setOptions	Site/Core/Helper/FirePHP.php	/^    public function setOptions($Options)$/;"	f
+setProcessorUrl	Site/Core/Helper/FirePHP.php	/^    public function setProcessorUrl($URL)$/;"	f
+setRendererUrl	Site/Core/Helper/FirePHP.php	/^    public function setRendererUrl($URL)$/;"	f
+setRouter	Site/Core/MVC/Controller/Dispatcher.php	/^	public function setRouter($router) {$/;"	f
+setView	Site/Core/MVC/View/SimpleView.php	/^	public function setView($view) {$/;"	f
+setView	Site/Core/MVC/View/View.php	/^	public function setView($view);$/;"	f
+severity	Site/Core/Helper/ChromePhp.php	/^			$severity = '';$/;"	v
+severity	Site/Core/Helper/ChromePhp.php	/^		$severity = count( $args ) == 3 ? array_pop( $args ) : '';$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_DEPRECATED: $severity = 'E_DEPRECATED'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_NOTICE: $severity = 'E_NOTICE'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_RECOVERABLE_ERROR: $severity = 'E_RECOVERABLE_ERROR'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_STRICT: $severity = 'E_STRICT'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_USER_DEPRECATED: $severity = 'E_USER_DEPRECATED'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_USER_ERROR: $severity = 'E_USER_ERROR'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_USER_NOTICE: $severity = 'E_USER_NOTICE'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_USER_WARNING: $severity = 'E_USER_WARNING'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                    case E_WARNING: $severity = 'E_WARNING'; break;$/;"	v
+severity	Site/Core/Helper/FirePHP.php	/^                $severity = false;$/;"	v
+skipFinalObjectEncode	Site/Core/Helper/FirePHP.php	/^                    $skipFinalObjectEncode = true;$/;"	v
+skipFinalObjectEncode	Site/Core/Helper/FirePHP.php	/^                $skipFinalObjectEncode = true;$/;"	v
+skipFinalObjectEncode	Site/Core/Helper/FirePHP.php	/^            $skipFinalObjectEncode = true;$/;"	v
+skipFinalObjectEncode	Site/Core/Helper/FirePHP.php	/^        $skipFinalObjectEncode = false;$/;"	v
+skipObjectEncode	Site/Core/Helper/FirePHP.php	/^    public function jsonEncode($Object, $skipObjectEncode = false)$/;"	v
+start	api.php	/^$start = microtime(true);$/;"	v
+start	index.php	/^$start = microtime(true);$/;"	v
+static	Site/Core/Helper/ChromePhp.php	/^		$static = $property->isStatic() ? ' static' : '';$/;"	v
+strlen_var	Site/Core/Helper/FirePHP.php	/^                $strlen_var = strlen($var);$/;"	v
+structure_index	Site/Core/Helper/FirePHP.php	/^            $structure_index = 2;$/;"	v
+structure_index	Site/Core/Helper/FirePHP.php	/^        $structure_index = 1;$/;"	v
+table	Site/Core/Helper/FirePHP.php	/^    public function table($Label, $Table, $Options = array())$/;"	f
+throwAssertionExceptions	Site/Core/Helper/FirePHP.php	/^        $this->throwAssertionExceptions = $throwAssertionExceptions;$/;"	v
+throwAssertionExceptions	Site/Core/Helper/FirePHP.php	/^    protected $throwAssertionExceptions = false;$/;"	v
+throwAssertionExceptions	Site/Core/Helper/FirePHP.php	/^    public function registerAssertionHandler($convertAssertionErrorsToExceptions = true, $throwAssertionExceptions = false)$/;"	v
+throwErrorExceptions	Site/Core/Helper/FirePHP.php	/^        $this->throwErrorExceptions = $throwErrorExceptions;$/;"	v
+throwErrorExceptions	Site/Core/Helper/FirePHP.php	/^    protected $throwErrorExceptions = true;$/;"	v
+to	Site/Core/Helper/FirePHP.php	/^    public static function to()$/;"	f
+tpl	Site/Core/Lang/Language.php	/^			$tpl = Language::Instance()->get($key, $namespace);$/;"	v
+trace	Site/Core/Helper/FirePHP.php	/^                $trace = debug_backtrace();$/;"	v
+trace	Site/Core/Helper/FirePHP.php	/^            $trace = $Object->getTrace();$/;"	v
+trace	Site/Core/Helper/FirePHP.php	/^            $trace = debug_backtrace();$/;"	v
+trace	Site/Core/Helper/FirePHP.php	/^    public function trace($Label)$/;"	f
+trace	Site/Core/Monitor/Debug.php	/^	public function trace($vars, $label = 'TRACE', $method = FirePHP::INFO) {$/;"	f
+trgger	Site/Core/Event/EventManager.php	/^	public function trgger( $eventName, $params )$/;"	f
+type	Site/Core/Helper/ChromePhp.php	/^			$type = $this->_getPropertyKey( $property );$/;"	v
+type	Site/Core/Helper/ChromePhp.php	/^		$type = $args['type'];$/;"	v
+utf16	Site/Core/Helper/FirePHP.php	/^                            $utf16 = $this->json_utf82utf16($char);$/;"	v
+value	Site/Core/Helper/ChromePhp.php	/^				$value = $property->getValue( $object );$/;"	v
+value	Site/Core/Helper/ChromePhp.php	/^				$value = 'only PHP 5.3 can access private\/protected properties';$/;"	v
+value	Site/Core/Helper/ChromePhp.php	/^				$value = 'recursion - parent object [' . get_class( $value ) . ']';$/;"	v
+value	Site/Core/Helper/ChromePhp.php	/^			$value = $args[1];$/;"	v
+value	Site/Core/Helper/ChromePhp.php	/^		$value = $logger->_convert( $value );$/;"	v
+value	Site/Core/Helper/ChromePhp.php	/^		$value = isset($args[0]) ? $args[0] : '';$/;"	v
+vars	Site/Core/Helper/FirePHP.php	/^                $vars = self::encodeObject($var);$/;"	v
+view	Site/Core/MVC/Controller/Front.php	/^				$this->view = new \\Core\\MVC\\View\\SimpleView();$/;"	v
+view	Site/Core/MVC/Controller/Front.php	/^		$view = $this->router->getController() . DS . $this->router->getAction();$/;"	v
+view	Site/Core/MVC/Controller/Front.php	/^	private $view;$/;"	v
+viewDatas	Site/Core/MVC/View/SimpleView.php	/^		$this->viewDatas = $vars;$/;"	v
+viewDatas	Site/Core/MVC/View/SimpleView.php	/^	private $viewDatas;$/;"	v
+viewFile	Site/Core/MVC/View/SimpleView.php	/^		$this->viewFile = APP_PATH . DS . 'View' . DS . $view . '.tpl.php';$/;"	v
+viewFile	Site/Core/MVC/View/SimpleView.php	/^	private $viewFile = '';$/;"	v
+warn	Site/Core/Helper/ChromePhp.php	/^	public static function warn()$/;"	f
+warn	Site/Core/Helper/FirePHP.php	/^    public function warn($Object, $Label = null, $Options = array())$/;"	f

@@ -94,7 +94,7 @@ class MemDataSource {
 		return $this->_decode($this->handle->get($key));
 	}
 
-	public function delete($key) {
-
+	public function delete($key, $expire = 0) {
+		return $this->handle->delete($key, $expire);
 	}
 }

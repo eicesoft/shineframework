@@ -15,5 +15,17 @@ interface IPlugin
 	 * @abstract
 	 * @return mixed
 	 */
+	public function startRouter();
+	
+	public function endRouter();
+	
+	public function startDispatcher();
+	
+	public function endDispatcher();
+	
 	public function execute();
+	
+	public function startView($viewData);
+	
+	public function endView($view);
 }
