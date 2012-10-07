@@ -2,6 +2,7 @@
 namespace Core\MVC\Controller;
 
 use Core\Error\CoreError;
+use Core\Proxy\ServiceProxy;
 
 /**
  * 派发器
@@ -36,13 +37,35 @@ abstract class Dispatcher
 	}
 
 	/**
-	 * @param $controller
-	 * @param $action
+	 * 创建Action
+	 * @param string $controller
+	 * @param string $action
 	 * @return Action
 	 */
 	private function _createAction($controller, $action) {
 		$className = 'App\\Controller\\' . $controller . '\\' . $action . 'Action';
+
 		return new $className();
+	}
+
+	/**
+	 * 初始化Action Service Proxy
+	 * @param Action $action
+	 */
+	private function _initServiceProxy(Action &$action)
+	{
+		$ref = new \ReflectionObject($action);
+		$properties = $ref->getProperties();
+		foreach($properties as $propertie)
+		{
+			$pname = $propertie->getName();
+
+			if(substr($pname, strlen($pname) - 7) == 'Service')
+			{
+				$propertie->setAccessible(true);
+				$propertie->setValue($action, new ServiceProxy($pname));
+			}
+		}
 	}
 
 	/**
@@ -55,6 +78,7 @@ abstract class Dispatcher
 	protected function _call($controller, $action, $params) {
 		$this->_loadAction($controller, $action);
 		$action = $this->_createAction($controller, $action);
+		$this->_initServiceProxy($action);
 
 		return call_user_func_array(array(&$action, 'execute'), array($params));
 	}

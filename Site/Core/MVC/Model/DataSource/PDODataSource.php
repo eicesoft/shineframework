@@ -15,9 +15,10 @@ class PDODataSource {
 	private $handle;
 
 	public function __construct($config) {
-		$dns = '';
+		$link = sprintf('mysql:dbname=%s;host=%s', $config['database'], $config['host']);
+
 		try {
-			$this->handle = new \PDO($dns, $config['user'], $config['password']);
+			$this->handle = new \PDO($link, $config['user'], $config['password']);
 		} catch (\PDOException $ex) {
 			throw new CoreError('error.pdo.connect');
 		}
