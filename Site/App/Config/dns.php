@@ -23,13 +23,40 @@ return array(
 		),
 	),
 
-	'database_index_map' => array(
-		'master' => 0,
-	),
-
 	'database_slave_map' => array(
 		'master' => 'master'
 	),
 
 	'index_database' => array('index'),
+
+	'index_redis' => array(
+		'host' => '172.17.0.21',
+		'port' => 6379
+	),
+
+	'redis_source' => array(
+		'master' => array(
+			'host' => '172.17.0.21',
+			'port' => 6379
+		),
+	),
+
+	'memcache_source' => array(
+		'master' => array(
+			'host' => '172.17.0.21',
+			'port' => 11211
+		),
+	),
+
+	'database_index_map' => array(
+		0 => 'master',
+	),
+
+	'memcache_index_map' => array(
+		0 => 'master',
+	),
+
+	'redis_index_map' => array(
+		0 => 'master',
+	),
 );

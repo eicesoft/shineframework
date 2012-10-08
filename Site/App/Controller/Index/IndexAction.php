@@ -25,6 +25,9 @@ class IndexAction extends Action
 	public function execute($param)
 	{
 		var_dump($this->TestService->test());
+
+		var_dump($this->TestService->test2());
+
 //		var_dump($this);
 		return array(
 			'title' => 'MVC',

@@ -6,7 +6,7 @@ use Core\Error\CoreError;
 /**
  * Memcache数据源
  */
-class MemDataSource {
+class MemDS {
 	const NULL_VAL = '&n$';
 	const FALSE_VAL = '&f$';
 	const EMPTY_VAL = '&s$';

@@ -3,7 +3,7 @@ namespace Core\MVC\Model\DataSource;
 
 use Core\Error\CoreError;
 
-class PDODataSource {
+class PDODS {
 	const FETCH_TYPE_ALL = 0;
 	const FETCH_TYPE_LINE = 1;
 	
