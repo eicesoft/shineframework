@@ -6,7 +6,7 @@ use Core\MVC\Model\RedisModel;
 class UserItemModel extends RedisModel
 {
 	protected $is_single = false;
-	protected $key = 'ui:%s';
+	protected $table = 'ui:%s';
 
 	/**
 	 * @param $uid

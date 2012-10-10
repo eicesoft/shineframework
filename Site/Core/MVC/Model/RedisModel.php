@@ -9,7 +9,7 @@ use Core\Error\CoreDataError;
  */
 class RedisModel extends Model
 {
-	protected $key;
+	protected $table;
 
 	/**
 	 * Redis连接池
@@ -52,9 +52,9 @@ class RedisModel extends Model
 	 * 获得用户key名称
 	 * @return string
 	 */
-	private function key()
+	private function table()
 	{
-		return sprintf($this->key, $this->uid);
+		return sprintf($this->table, $this->uid);
 	}
 
 	/**
@@ -63,18 +63,18 @@ class RedisModel extends Model
 	 */
 	public function find($pk = null)
 	{
-		$index = GroupIndex::Instance()->get($this->uid);
+		$index = GroupIndex::Instance()->get($this->uid, GroupIndex::TYPE_REDIS);
 		$handle = $this->_init_ds($index);
 
 		if ($this->is_single)
 		{
-			$ret = $handle->hgetall($this->key());
+			$ret = $handle->hgetall($this->table());
 		}
 		else
 		{
 			if (null === $pk)
 			{
-				$ret = $handle->hgetall($this->key());
+				$ret = $handle->hgetall($this->table());
 				foreach($ret as &$val)
 				{
 					$val = json_decode($val, true);
@@ -84,7 +84,7 @@ class RedisModel extends Model
 			}
 			else	//查询单行数据
 			{
-				$ret = json_decode($handle->hget($this->key(), $pk), true);
+				$ret = json_decode($handle->hget($this->table(), $pk), true);
 			}
 		}
 
@@ -100,31 +100,31 @@ class RedisModel extends Model
 	 */
 	public function update($datas, $pk = null)
 	{
-		$index = GroupIndex::Instance()->get($this->uid);
+		$index = GroupIndex::Instance()->get($this->uid, GroupIndex::TYPE_REDIS);
 		$handle = $this->_init_ds($index);
 
 		if ($this->is_single)
 		{
-			if ($handle->exists($this->key()))
+			if ($handle->exists($this->table()))
 			{
-				return (bool)$handle->hmset($this->key(), $datas);
+				return (bool)$handle->hmset($this->table(), $datas);
 			}
 			else
 			{
 //				return false;
-				throw new CoreDataError('error.data.pknotexist', array($this->key()));
+				throw new CoreDataError('error.data.pknotexist', array($this->table()));
 			}
 		}
 		else
 		{
-			if ($handle->hexists($this->key(), $pk))
+			if ($handle->hexists($this->table(), $pk))
 			{
-				return (bool)$handle->hset($this->key(), $pk, json_encode($datas));
+				return (bool)$handle->hset($this->table(), $pk, json_encode($datas));
 			}
 			else
 			{
 //				return false;
-				throw new CoreDataError('error.data.pknotexist', array($this->key() . '#' . $pk));
+				throw new CoreDataError('error.data.pknotexist', array($this->table() . '#' . $pk));
 			}
 		}
 	}
@@ -138,31 +138,31 @@ class RedisModel extends Model
 	 */
 	public function insert($datas, $pk = null)
 	{
-		$index = GroupIndex::Instance()->get($this->uid);
+		$index = GroupIndex::Instance()->get($this->uid, GroupIndex::TYPE_REDIS);
 		$handle = $this->_init_ds($index);
 
 		if ($this->is_single)
 		{
-			if(!$handle->exists($this->key()))
+			if(!$handle->exists($this->table()))
 			{
-				return (bool)$handle->hmset($this->key(), $datas);
+				return (bool)$handle->hmset($this->table(), $datas);
 			}
 			else
 			{
 				//return false;
-				throw new CoreDataError('error.data.pkexist', array($this->key()));
+				throw new CoreDataError('error.data.pkexist', array($this->table()));
 			}
 		}
 		else
 		{
-			if (!$handle->hexists($this->key(), $pk))
+			if (!$handle->hexists($this->table(), $pk))
 			{
-				return (bool)$handle->hset($this->key(), $pk, json_encode($datas));
+				return (bool)$handle->hset($this->table(), $pk, json_encode($datas));
 			}
 			else
 			{
 //				return false;
-				throw new CoreDataError('error.data.pkexist', array($this->key() . '#' . $pk));
+				throw new CoreDataError('error.data.pkexist', array($this->table() . '#' . $pk));
 			}
 		}
 	}
@@ -174,22 +174,22 @@ class RedisModel extends Model
 	 */
 	public function delete($pk = null)
 	{
-		$index = GroupIndex::Instance()->get($this->uid);
+		$index = GroupIndex::Instance()->get($this->uid, GroupIndex::TYPE_REDIS);
 		$handle = $this->_init_ds($index);
 
 		if ($this->is_single)
 		{
-			return (bool)$handle->delete($this->key());
+			return (bool)$handle->delete($this->table());
 		}
 		else
 		{
 			if(null === $pk)
 			{
-				return (bool)$handle->del($this->key());
+				return (bool)$handle->del($this->table());
 			}
 			else
 			{
-				return (bool)$handle->hdel($this->key(), $pk);
+				return (bool)$handle->hdel($this->table(), $pk);
 			}
 		}
 	}

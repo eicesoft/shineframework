@@ -1,12 +1,12 @@
 <?php
 namespace App\Model;
 
-use Core\MVC\Model\RedisModel;
+use Core\MVC\Model\DBModel;
 
-class UserModel extends RedisModel
+class UserModel extends DBModel
 {
 	protected $is_single = true;
-	protected $key = 'u:%s';
+	protected $table = 'u:%s';
 
 	public function Get($uid)
 	{
@@ -18,7 +18,6 @@ class UserModel extends RedisModel
 //			'uName' => 'test',
 //			'uAge' => 20
 //		)));
-		$this->find();
 		return $this->find();
 	}
 }

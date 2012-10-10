@@ -16,6 +16,11 @@ class IndexAction extends Action
 	public function __construct()
 	{
 		parent::__construct();
+
+		$a = 1;
+		//echo $a & 1000;
+		$a = $a | 1000;
+		echo $a & 1000;
 	}
 
 	/**
@@ -26,8 +31,7 @@ class IndexAction extends Action
 	{
 		var_dump($this->TestService->test());
 
-		var_dump($this->TestService->test2());
-
+//		var_dump($this->TestService->test2());
 //		var_dump($this);
 		return array(
 			'title' => 'MVC',
