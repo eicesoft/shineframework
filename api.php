@@ -5,6 +5,7 @@ $start = microtime(true);
 define('APP_PATH', __DIR__ . DS . 'Site' . DS . 'App');
 
 use Core\Application;
+use Core\Monitor\Debug;
 use Core\Error\CoreError;
 
 try {

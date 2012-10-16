@@ -1,4 +1,6 @@
 <?php
+namespace Loader;
+
 define('CORE_PATH', __DIR__);
 define('DS', DIRECTORY_SEPARATOR);
 
@@ -13,7 +15,7 @@ class Autoload
      * 自动载入类文件
      * @static
      * @param string $className
-     * @throws Exception
+     * @throws \Exception
      */
     public static function loader($className)
     {
@@ -25,13 +27,13 @@ class Autoload
 
             include($file);
         } else {
-            throw new Exception("don't find file:{$file}");
+            throw new \Exception("don't find file:{$file}");
         }
     }
 
     public static function init()
     {
-        spl_autoload_register('Autoload::loader');
+        spl_autoload_register('Loader\Autoload::loader');
     }
 }
 
