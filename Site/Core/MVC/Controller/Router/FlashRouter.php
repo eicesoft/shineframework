@@ -8,8 +8,8 @@ use Core\MVC\Controller\Router;
  */
 class FlashRouter extends Router
 {
-	public function init()
-	{
+    public function init()
+    {
 
-	}
+    }
 }

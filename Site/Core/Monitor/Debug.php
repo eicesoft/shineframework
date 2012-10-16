@@ -7,51 +7,53 @@ use Core\Helper\ChromePhp;
 /**
  * 调试类
  */
-class Debug {
-	/**
-	 * @var
-	 */
-	private $debuginstance;
+class Debug
+{
+    /**
+     * @var
+     */
+    private $debuginstance;
 
-	/**
-	 * @var Debug
-	 */
-	private static $instance = null;
+    /**
+     * @var Debug
+     */
+    private static $instance = null;
 
-	/**
-	 * @static
-	 * @return Debug
-	 */
-	public static function Instance() {
-		if( null === self::$instance ) {
-			self::$instance = new Debug();
-		}
+    /**
+     * @static
+     * @return Debug
+     */
+    public static function instance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new Debug();
+        }
 
-		return self::$instance;
-	}
+        return self::$instance;
+    }
 
-	private function __construct() {
-		$isdebug = \Core\Application::Instance()->GetConfig('debug');
-		$debugtype = \Core\Application::Instance()->GetConfig('debugtype');
+    private function __construct()
+    {
+        $isdebug = \Core\Application::instance()->getConfig('debug');
+        $debugtype = \Core\Application::instance()->getConfig('debugtype');
 
-		switch($debugtype) {
-			case 'firebug':
-				$this->debuginstance = new FirePHP();
-				break;
-			case 'chromephp':
-				$this->debuginstance = ChromePhp::getInstance();
-				break;
-			default:
-				$this->debuginstance = new FirePHP();
-				break;
-		}
+        switch ($debugtype) {
+            case 'firebug':
+                $this->debuginstance = new FirePHP();
+                break;
+            case 'chromephp':
+                $this->debuginstance = ChromePhp::getInstance();
+                break;
+            default:
+                $this->debuginstance = new FirePHP();
+                break;
+        }
 
-		$this->debuginstance->setEnabled($isdebug);
-//		$this->debuginstance = new FirePHP();-
-//		$this->debuginstance->setEnabled($isdebug);
-	}
+        $this->debuginstance->setEnabled($isdebug);
+    }
 
-	public function trace($vars, $label = 'TRACE', $method = FirePHP::INFO) {
-		call_user_func_array(array($this->debuginstance, $method), array($vars, $label));
-	}
+    public function trace($vars, $label = 'TRACE', $method = FirePHP::INFO)
+    {
+        call_user_func_array(array($this->debuginstance, $method), array($vars, $label));
+    }
 }

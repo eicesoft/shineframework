@@ -3,59 +3,63 @@ namespace Core\MVC\Model\DataSource;
 
 use Core\Error\CoreError;
 
-class PDODS {
-	const FETCH_TYPE_ALL = 0;
-	const FETCH_TYPE_LINE = 1;
-	
-	private $fetchStyle = \PDO::FETCH_ASSOC;
+class PDODS
+{
+    const FETCH_TYPE_ALL = 0;
+    const FETCH_TYPE_LINE = 1;
 
-	/**
-	 * @var \PDO
-	 */
-	private $handle;
+    private $fetchStyle = \PDO::FETCH_ASSOC;
 
-	public function __construct($config) {
-		$link = sprintf('mysql:dbname=%s;host=%s', $config['database'], $config['host']);
+    /**
+     * @var \PDO
+     */
+    private $handle;
 
-		try {
-			$this->handle = new \PDO($link, $config['user'], $config['password']);
-		} catch (\PDOException $ex) {
-			throw new CoreError('error.pdo.connect');
-		}
-	}
+    public function __construct($config)
+    {
+        $link = sprintf('mysql:dbname=%s;host=%s', $config['database'], $config['host']);
 
-	/**
-	 * sql query data
-	 * @param string $sql
-	 * @param int $fetchType
-	 * @return mixed
-	 */
-	public function query($sql, $fetchType = PDODataSource::FETCH_TYPE_ALL) {
-		$pdostmt = $this->handle->prepare($sql);
-		
-		switch ($fetchType) {
-			case PDODataSource::FETCH_TYPE_ALL:
-				$queryData = $pdostmt->fetchAll($this->fetchStyle);
-				break;
-			case PDODataSource::FETCH_TYPE_LINE:
-				$queryData = $pdostmt->fetch($this->fetchStyle);
-				break;
-			default:
-				$queryData = $pdostmt->fetch($this->fetchStyle);
-				break;
-		}
-		
-		return $queryData;
-	}
-	
-	/**
-	 * sql execute
-	 * @param string $sql
-	 * @return int
-	 */
-	public function execute($sql) {
-		$ret = $this->handle->exec($sql);
-		
-		return $ret;
-	}
+        try {
+            $this->handle = new \PDO($link, $config['user'], $config['password']);
+        } catch (\PDOException $ex) {
+            throw new CoreError('error.pdo.connect');
+        }
+    }
+
+    /**
+     * sql query data
+     * @param string $sql
+     * @param int $fetchType
+     * @return mixed
+     */
+    public function query($sql, $fetchType = PDODataSource::FETCH_TYPE_ALL)
+    {
+        $pdostmt = $this->handle->prepare($sql);
+
+        switch ($fetchType) {
+            case PDODataSource::FETCH_TYPE_ALL:
+                $queryData = $pdostmt->fetchAll($this->fetchStyle);
+                break;
+            case PDODataSource::FETCH_TYPE_LINE:
+                $queryData = $pdostmt->fetch($this->fetchStyle);
+                break;
+            default:
+                $queryData = $pdostmt->fetch($this->fetchStyle);
+                break;
+        }
+
+        return $queryData;
+    }
+
+    /**
+     * sql execute
+     * @param string $sql
+     * @return int
+     */
+    public function execute($sql)
+    {
+        $ret = $this->handle->exec($sql);
+
+        return $ret;
+    }
 }

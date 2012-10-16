@@ -6,8 +6,8 @@ namespace Core\Proxy;
  */
 class ModelProxy extends Proxy
 {
-	protected function _getClassName()
-	{
-		return 'App\\Model\\' . $this->proxyName;
-	}
+    protected function getClassName()
+    {
+        return 'App\\Model\\' . $this->proxyName;
+    }
 }

@@ -12,108 +12,111 @@ use Core\MVC\View\View;
  */
 class Front
 {
-	/**
-	 * @var Front
-	 */
-	private static $instance = null;
+    /**
+     * @var Front
+     */
+    private static $instance = null;
 
-	/**
-	 * @static
-	 * @return Front
-	 */
-	public static function Instance()
-	{
-		if (null === self::$instance) {
-			self::$instance = new Front();
-		}
+    /**
+     * @static
+     * @return Front
+     */
+    public static function Instance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new Front();
+        }
 
-		return self::$instance;
-	}
+        return self::$instance;
+    }
 
-	/**
-	 * @var Dispatcher
-	 */
-	private $dispatcher;
+    /**
+     * @var Dispatcher
+     */
+    private $dispatcher;
 
-	/**
-	 * @var Router
-	 */
-	private $router;
+    /**
+     * @var Router
+     */
+    private $router;
 
-	/**
-	 * @var View
-	 */
-	private $view;
+    /**
+     * @var View
+     */
+    private $view;
 
-	/**
-	 * @var int
-	 */
-	private $mode;
+    /**
+     * @var int
+     */
+    private $mode;
 
-	/**
-	 *
-	 */
-	private function __construct()
-	{
+    /**
+     *
+     */
+    private function __construct()
+    {
 
-	}
+    }
 
-	/**
-	 * 基本初始化
-	 */
-	public function init()
-	{
-		switch ($this->mode) {
-			case Application::WEB_MODE:
-				$this->router = new \Core\MVC\Controller\Router\WebRouter();
-				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\WebDispatcher();
-				$this->view = new \Core\MVC\View\SimpleView();
-				break;
-			case Application::FLASH_MODE:
-				$this->dispatcher = new \Core\MVC\Controller\Dispatcher\FlashDispatcher();
-				$this->router = new \Core\MVC\Controller\Router\FlashRouter();
-				break;
-		}
-	}
+    /**
+     * 基本初始化
+     */
+    public function init()
+    {
+        switch ($this->mode) {
+            case Application::WEB_MODE:
+                $this->router = new \Core\MVC\Controller\Router\WebRouter();
+                $this->dispatcher = new \Core\MVC\Controller\Dispatcher\WebDispatcher();
+                $this->view = new \Core\MVC\View\SimpleView();
+                break;
+            case Application::FLASH_MODE:
+                $this->dispatcher = new \Core\MVC\Controller\Dispatcher\FlashDispatcher();
+                $this->router = new \Core\MVC\Controller\Router\FlashRouter();
+                break;
+        }
+    }
 
-	/**
-	 * 初始化路由器
-	 */
-	public function initRouter()
-	{
-		$this->router->init();
-	}
+    /**
+     * 初始化路由器
+     */
+    public function initRouter()
+    {
+        $this->router->init();
+    }
 
-	/**
-	 * 初始化派发器
-	 */
-	public function initDispatcher() {
-		$this->dispatcher->setRouter($this->router);
-		$this->dispatcher->init();
-	}
+    /**
+     * 初始化派发器
+     */
+    public function initDispatcher()
+    {
+        $this->dispatcher->setRouter($this->router);
+        $this->dispatcher->init();
+    }
 
-	/**
-	 * 派发器执行
-	 * @return mixed
-	 */
-	public function execute() {
-		return $this->dispatcher->execute();
-	}
+    /**
+     * 派发器执行
+     * @return mixed
+     */
+    public function execute()
+    {
+        return $this->dispatcher->execute();
+    }
 
-	public function display($datas) {
-		$view = $this->router->getController() . DS . $this->router->getAction();
-		$this->view->setView($view);
-		$this->view->assigns($datas);
-		
-		return $this->view->display();
-	}
+    public function display($datas)
+    {
+        $view = $this->router->getController() . DS . $this->router->getAction();
+        $this->view->setView($view);
+        $this->view->assigns($datas);
 
-	/**
-	 * 设置路由模式
-	 * @param int $mode
-	 */
-	public function setMode( $mode )
-	{
-		$this->mode = $mode;
-	}
+        return $this->view->display();
+    }
+
+    /**
+     * 设置路由模式
+     * @param int $mode
+     */
+    public function setMode($mode)
+    {
+        $this->mode = $mode;
+    }
 }

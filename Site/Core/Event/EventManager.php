@@ -6,47 +6,47 @@ namespace Core\Event;
  */
 class EventManager
 {
-	/**
-	 * @var EventManager
-	 */
-	private static $instance = null;
+    /**
+     * @var EventManager
+     */
+    private static $instance = null;
 
-	/**
-	 * @static
-	 * @return EventManager
-	 */
-	public static function Instance()
-	{
-		if (null === self::$instance) {
-			self::$instance = new EventManager();
-		}
+    /**
+     * @static
+     * @return EventManager
+     */
+    public static function instance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new EventManager();
+        }
 
-		return self::$instance;
-	}
+        return self::$instance;
+    }
 
 
-	private $events;
+    private $events;
 
-	private function __construct()
-	{
-		$this->events = array();
-	}
+    private function __construct()
+    {
+        $this->events = array();
+    }
 
-	/**
-	 * 注册事件
-	 * @param string $eventName
-	 */
-	public function registry( $eventName )
-	{
-		if (isset($this->events[$eventName])) {
-			$this->events[$eventName] = new $eventName();
-		}
-	}
+    /**
+     * 注册事件
+     * @param string $eventName
+     */
+    public function registry($eventName)
+    {
+        if (isset($this->events[$eventName])) {
+            $this->events[$eventName] = new $eventName();
+        }
+    }
 
-	public function trgger( $eventName, $params )
-	{
-		if (isset($this->events[$eventName])) {
-			$this->events[$eventName]->execute( $params );
-		}
-	}
+    public function trgger($eventName, $params)
+    {
+        if (isset($this->events[$eventName])) {
+            $this->events[$eventName]->execute($params);
+        }
+    }
 }

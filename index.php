@@ -9,15 +9,15 @@ use Core\Error\CoreError;
 use Core\Monitor\Debug;
 
 try {
-	$app = Application::Instance();
+    $app = Application::instance();
 
-	$app->setAppPath( APP_PATH );
-	$app->setMode( Application::WEB_MODE );
+    $app->setAppPath(APP_PATH);
+    $app->setMode(Application::WEB_MODE);
 
-	$app->run();
+    $app->run();
 } catch (CoreError $ex) {
-	echo $ex->getMessage();
+    echo $ex->getMessage();
 }
 
 $end = microtime(true);
-Debug::Instance()->trace(sprintf("Page run: %0.4f ms", ($end - $start) * 1000));
+Debug::instance()->trace(sprintf("Page run: %0.4f ms", ($end - $start) * 1000));

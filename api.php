@@ -8,14 +8,14 @@ use Core\Application;
 use Core\Error\CoreError;
 
 try {
-	$app = Application::Instance();
+    $app = Application::instance();
 
-	$app->setAppPath( APP_PATH );
-	$app->setMode( Application::FLASH_MODE );
+    $app->setAppPath(APP_PATH);
+    $app->setMode(Application::FLASH_MODE);
 
-	$app->run();
+    $app->run();
 } catch (CoreError $ex) {
-	echo $ex->getMessage();
+    echo $ex->getMessage();
 }
 
 $end = microtime(true);

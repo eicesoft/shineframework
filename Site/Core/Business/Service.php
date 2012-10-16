@@ -8,41 +8,40 @@ use Core\Proxy\ModelProxy;
 /**
  * 业务服务基类
  */
-class Service {
-	/**
-	 * @var \Core\Config
-	 */
-	protected $config;
+class Service
+{
+    /**
+     * @var \Core\Config
+     */
+    protected $config;
 
-	/**
-	 * @var \Core\Monitor\Debug
-	 */
-	protected $monitor;
+    /**
+     * @var \Core\Monitor\Debug
+     */
+    protected $monitor;
 
-	/**
-	 *
-	 */
-	public function _initModelProxy()
-	{
-		$ref = new \ReflectionObject($this);
-		$properties = $ref->getProperties();
-		foreach($properties as $propertie)
-		{
-			$pname = $propertie->getName();
+    /**
+     *
+     */
+    public function initModelProxy()
+    {
+        $ref = new \ReflectionObject($this);
+        $properties = $ref->getProperties();
+        foreach ($properties as $propertie) {
+            $pname = $propertie->getName();
 
-			if(substr($pname, strlen($pname) - 5) == 'Model')
-			{
-				$propertie->setAccessible(true);
-				$propertie->setValue($this, new ModelProxy($pname));
-			}
-		}
-	}
+            if (substr($pname, strlen($pname) - 5) == 'Model') {
+                $propertie->setAccessible(true);
+                $propertie->setValue($this, new ModelProxy($pname));
+            }
+        }
+    }
 
-	public function __construct()
-	{
-		$this->config = Config::Instance();
-		$this->monitor = Debug::Instance();
+    public function __construct()
+    {
+        $this->config = Config::instance();
+        $this->monitor = Debug::instance();
 
-		$this->_initModelProxy();
-	}
+        $this->initModelProxy();
+    }
 }

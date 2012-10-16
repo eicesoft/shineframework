@@ -11,139 +11,139 @@ use Core\Plugin\PluginManager;
  */
 class Application
 {
-	const WEB_MODE = 0;
-	const FLASH_MODE = 1;
-	const SOCKET_MODE = 2;
-	const TEST_MODE = 3;
+    const WEB_MODE = 0;
+    const FLASH_MODE = 1;
+    const SOCKET_MODE = 2;
+    const TEST_MODE = 3;
 
-	/**
-	 * @var Application
-	 */
-	private static $instance = null;
+    /**
+     * @var Application
+     */
+    private static $instance = null;
 
-	/**
-	 * @static
-	 * @return Application
-	 */
-	public static function Instance()
-	{
-		if (null === self::$instance) {
-			self::$instance = new Application();
-		}
+    /**
+     * @static
+     * @return Application
+     */
+    public static function instance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new Application();
+        }
 
-		return self::$instance;
-	}
+        return self::$instance;
+    }
 
-	/**
-	 * @var array
-	 */
-	private $appconfigs;
+    /**
+     * @var array
+     */
+    private $appconfigs;
 
-	/**
-	 * @var string
-	 */
-	private $apppath;
+    /**
+     * @var string
+     */
+    private $apppath;
 
-	/**
-	 * @var Front
-	 */
-	private $front;
+    /**
+     * @var Front
+     */
+    private $front;
 
-	/**
-	 * 路由模式
-	 * @var int
-	 */
-	private $mode;
-	
-	/**
-	 *
-	 * @var Plugin\PluginManager
-	 */
-	private $plugin;
+    /**
+     * 路由模式
+     * @var int
+     */
+    private $mode;
 
-	/**
-	 * construct function
-	 */
-	private function __construct()
-	{
-		$this->_loadAppConfig();
-		$this->front = Front::Instance();
-		$this->plugin = PluginManager::Instance();
-	}
-	
-	private function _init()
-	{
-		$this->plugin->registry('HttpPlugin');
-	}
+    /**
+     *
+     * @var Plugin\PluginManager
+     */
+    private $plugin;
 
-	/**
-	 * load app config
-	 */
-	private function _loadAppConfig()
-	{
-		$this->appconfigs = require(__DIR__ . DS . 'appconfig.php');
-	}
+    /**
+     * construct function
+     */
+    private function __construct()
+    {
+        $this->loadAppConfig();
+        $this->front = Front::Instance();
+        $this->plugin = PluginManager::Instance();
+    }
 
-	/**
-	 * get app config
-	 * @param string $key
-	 * @return mixed
-	 */
-	public function GetConfig( $key )
-	{
-		return isset($this->appconfigs[$key]) ? $this->appconfigs[$key] : null;
-	}
+    private function init()
+    {
+        $this->plugin->registry('HttpPlugin');
+    }
 
-	/**
-	 * 设置App path
-	 * @param type $apppath
-	 */
-	public function setAppPath( $apppath )
-	{
-		$this->apppath = $apppath;
-	}
+    /**
+     * load app config
+     */
+    private function loadAppConfig()
+    {
+        $this->appconfigs = require(__DIR__ . DS . 'appconfig.php');
+    }
 
-	/**
-	 * get app path
-	 * @return type
-	 */
-	public function getAppPath()
-	{
-		return $this->apppath;
-	}
+    /**
+     * get app config
+     * @param string $key
+     * @return mixed
+     */
+    public function getConfig($key)
+    {
+        return isset($this->appconfigs[$key]) ? $this->appconfigs[$key] : null;
+    }
 
-	/**
-	 * App执行
-	 */
-	public function run()
-	{
-		$this->front->setMode( $this->mode );
-		$this->front->init();
-		
-		$this->plugin->startRouter();
-		$this->front->initRouter();
-		$this->plugin->endRouter();
-		
-		$this->plugin->startDispatcher();
-		$this->front->initDispatcher();
-		$this->plugin->endDispatcher();
-		
-		$this->plugin->execute();
-		$execData = $this->front->execute();		
-		
-		$this->plugin->startView($execData);
-		$view = $this->front->display($execData);
-		$this->plugin->endView($view);
-		
-		echo $view;
-	}
+    /**
+     * 设置App path
+     * @param type $apppath
+     */
+    public function setAppPath($apppath)
+    {
+        $this->apppath = $apppath;
+    }
 
-	/**
-	 * 设置路由模式
-	 * @param int $mode
-	 */
-	public function setMode( $mode )
-	{
-		$this->mode = $mode;
-	}
+    /**
+     * get app path
+     * @return type
+     */
+    public function getAppPath()
+    {
+        return $this->apppath;
+    }
+
+    /**
+     * App执行
+     */
+    public function run()
+    {
+        $this->front->setMode($this->mode);
+        $this->front->init();
+
+        $this->plugin->startRouter();
+        $this->front->initRouter();
+        $this->plugin->endRouter();
+
+        $this->plugin->startDispatcher();
+        $this->front->initDispatcher();
+        $this->plugin->endDispatcher();
+
+        $this->plugin->execute();
+        $execData = $this->front->execute();
+
+        $this->plugin->startView($execData);
+        $view = $this->front->display($execData);
+        $this->plugin->endView($view);
+
+        echo $view;
+    }
+
+    /**
+     * 设置路由模式
+     * @param int $mode
+     */
+    public function setMode($mode)
+    {
+        $this->mode = $mode;
+    }
 }

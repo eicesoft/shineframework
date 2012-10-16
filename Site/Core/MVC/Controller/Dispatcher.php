@@ -9,89 +9,91 @@ use Core\Proxy\ServiceProxy;
  */
 abstract class Dispatcher
 {
-	/**
-	 * @var Router
-	 */
-	protected $router;
+    /**
+     * @var Router
+     */
+    protected $router;
 
-	/**
-	 * @param Router $router
-	 */
-	public function setRouter($router) {
-		$this->router = $router;
-	}
+    /**
+     * @param Router $router
+     */
+    public function setRouter($router)
+    {
+        $this->router = $router;
+    }
 
-	/**
-	 * 载入Action文件
-	 * @param string $controller
-	 * @param string $action
-	 * @throws \Core\Error\CoreError
-	 */
-	private function _loadAction($controller, $action) {
-		$file = APP_PATH . DS . 'Controller' . DS  . $controller . DS . $action . 'Action.php';
-		if(is_readable($file)) {
-			require $file;
-		} else {
-			throw new CoreError('error.notaction', array($controller, $action));
-		}
-	}
+    /**
+     * 载入Action文件
+     * @param string $controller
+     * @param string $action
+     * @throws \Core\Error\CoreError
+     */
+    private function _loadAction($controller, $action)
+    {
+        $file = APP_PATH . DS . 'Controller' . DS . $controller . DS . $action . 'Action.php';
+        if (is_readable($file)) {
+            require $file;
+        } else {
+            throw new CoreError('error.notaction', array($controller, $action));
+        }
+    }
 
-	/**
-	 * 创建Action
-	 * @param string $controller
-	 * @param string $action
-	 * @return Action
-	 */
-	private function _createAction($controller, $action) {
-		$className = 'App\\Controller\\' . $controller . '\\' . $action . 'Action';
+    /**
+     * 创建Action
+     * @param string $controller
+     * @param string $action
+     * @return Action
+     */
+    private function createAction($controller, $action)
+    {
+        $className = 'App\\Controller\\' . $controller . '\\' . $action . 'Action';
 
-		return new $className();
-	}
+        return new $className();
+    }
 
-	/**
-	 * 初始化Action Service Proxy
-	 * @param Action $action
-	 */
-	private function _initServiceProxy(Action &$action)
-	{
-		$ref = new \ReflectionObject($action);
-		$properties = $ref->getProperties();
-		foreach($properties as $propertie)
-		{
-			$pname = $propertie->getName();
+    /**
+     * 初始化Action Service Proxy
+     * @param Action $action
+     */
+    private function initServiceProxy(Action &$action)
+    {
+        $ref = new \ReflectionObject($action);
+        $properties = $ref->getProperties();
+        foreach ($properties as $propertie) {
+            $pname = $propertie->getName();
 
-			if(substr($pname, strlen($pname) - 7) == 'Service')
-			{
-				$propertie->setAccessible(true);
-				$propertie->setValue($action, new ServiceProxy($pname));
-			}
-		}
-	}
+            if (substr($pname, strlen($pname) - 7) == 'Service') {
+                $propertie->setAccessible(true);
+                $propertie->setValue($action, new ServiceProxy($pname));
+            }
+        }
+    }
 
-	/**
-	 * 调用Action
-	 * @param string $controller
-	 * @param string $action
-	 * @param string $params
-	 * @return mixed
-	 */
-	protected function _call($controller, $action, $params) {
-		$this->_loadAction($controller, $action);
-		$action = $this->_createAction($controller, $action);
-		$this->_initServiceProxy($action);
+    /**
+     * 调用Action
+     * @param string $controller
+     * @param string $action
+     * @param string $params
+     * @return mixed
+     */
+    protected function call($controller, $action, $params)
+    {
+        $this->_loadAction($controller, $action);
+        $action = $this->createAction($controller, $action);
+        $this->initServiceProxy($action);
 
-		return call_user_func_array(array(&$action, 'execute'), array($params));
-	}
+        return call_user_func_array(array(&$action, 'execute'), array($params));
+    }
 
-	/**
-	 * 派发器初始化
-	 * @return mixed
-	 */
-	public abstract function init();
+    /**
+     * 派发器初始化
+     * @return mixed
+     */
+    abstract public function init();
 
-	/**
-	 * 派发器执行
-	 * @return mixed
-	 */
-	public abstract function execute();
+    /**
+     * 派发器执行
+     * @return mixed
+     */
+    abstract public function execute();
 }

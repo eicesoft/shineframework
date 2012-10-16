@@ -8,18 +8,18 @@ use Core\MVC\Controller\Dispatcher;
  */
 class WebDispatcher extends Dispatcher
 {
-	/**
-	 * 初始化派发器
-	 * @return mixed|void
-	 */
-	public function init()
-	{
+    /**
+     * 初始化派发器
+     * @return mixed|void
+     */
+    public function init()
+    {
 
-	}
+    }
 
-	public function execute()
-	{
-		return $this->_call($this->router->getController(),
-			$this->router->getAction(), $this->router->getParams());
-	}
+    public function execute()
+    {
+        $ret = $this->call($this->router->getController(), $this->router->getAction(), $this->router->getParams());
+        return $ret;
+    }
 }

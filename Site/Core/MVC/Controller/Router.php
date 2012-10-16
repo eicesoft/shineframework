@@ -6,5 +6,5 @@ namespace Core\MVC\Controller;
  */
 abstract class Router
 {
-	public abstract function init();
+    abstract public function init();
 }

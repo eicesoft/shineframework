@@ -8,10 +8,10 @@ use Core\Lang\Language;
  */
 class CoreError extends \Exception
 {
-	public function __construct( $lankey, $params = array(), $code = 0 )
-	{
-		$message = Language::G($lankey, $params);
+    public function __construct($lankey, $params = array(), $code = 0)
+    {
+        $message = Language::getLang($lankey, $params);
 
-		parent::__construct($message, $code);
-	}
+        parent::__construct($message, $code);
+    }
 }

@@ -7,32 +7,32 @@ define('DS', DIRECTORY_SEPARATOR);
  */
 class Autoload
 {
-	public static $loaderfile = array();
+    public static $loaderfile = array();
 
-	/**
-	 * 自动载入类文件
-	 * @static
-	 * @param string $className
-	 * @throws Exception
-	 */
-	public static function loader( $className )
-	{
-		$className = str_replace( "\\", DS, $className );
+    /**
+     * 自动载入类文件
+     * @static
+     * @param string $className
+     * @throws Exception
+     */
+    public static function loader($className)
+    {
+        $className = str_replace("\\", DS, $className);
 
-		$file = CORE_PATH . DS . $className . '.php';
-		if (is_readable( $file )) {
-			self::$loaderfile[] = $file;
+        $file = CORE_PATH . DS . $className . '.php';
+        if (is_readable($file)) {
+            self::$loaderfile[] = $file;
 
-			include($file);
-		}
-		else
-			throw new Exception("don't find file:{$file}");
-	}
+            include($file);
+        } else {
+            throw new Exception("don't find file:{$file}");
+        }
+    }
 
-	public static function init()
-	{
-		spl_autoload_register( 'Autoload::loader' );
-	}
+    public static function init()
+    {
+        spl_autoload_register('Autoload::loader');
+    }
 }
 
 Autoload::init();
