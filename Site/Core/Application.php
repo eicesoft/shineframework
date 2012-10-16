@@ -96,7 +96,7 @@ class Application
 
     /**
      * 设置App path
-     * @param type $apppath
+     * @param string $apppath
      */
     public function setAppPath($apppath)
     {
@@ -105,7 +105,7 @@ class Application
 
     /**
      * get app path
-     * @return type
+     * @return string
      */
     public function getAppPath()
     {
