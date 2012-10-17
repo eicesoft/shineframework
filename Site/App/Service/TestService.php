@@ -28,6 +28,9 @@ class TestService extends Service
 
     public function test2()
     {
+        \Core\Define::set('t1', 't2');
+        echo \Core\Define::get('t1');
+        echo "[", $this->config->get('test', 'items'), "]";
         return $this->UserItemModel->get(123456788);
     }
 }

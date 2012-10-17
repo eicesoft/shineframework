@@ -10,8 +10,6 @@ class UserModel extends DBModel
 
     public function get($uid)
     {
-        //$index = \Core\MVC\Model\GroupIndex::Instance();
-        //return $index->get($uid, \Core\MVC\Model\GroupIndex::TYPE_MEMCACHE);
         $this->setMainId($uid);
         /*
         var_dump($this->insert(array(

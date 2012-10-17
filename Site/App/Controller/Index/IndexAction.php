@@ -31,7 +31,7 @@ class IndexAction extends Action
     {
         var_dump($this->TestService->test());
 
-        //var_dump($this->TestService->test2());
+        var_dump($this->TestService->test2());
         //var_dump($this);
         return array(
             'title' => 'MVC',

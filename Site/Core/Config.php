@@ -38,7 +38,13 @@ class Config
             if (is_readable($file)) {
                 $this->datas[$moudle] = include($file);
             } else {
-                throw new CoreError('error.configexist', $file);
+                $file = APP_PATH . DS . 'Config' . DS . $moudle . DS . CORE_LANG . '.php';
+
+                if (is_readable($file)) {
+                    $this->datas[$moudle] = include($file);
+                } else {
+                    throw new CoreError('error.configexist', $file);
+                }
             }
         } else {
             //TODO

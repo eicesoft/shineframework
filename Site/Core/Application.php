@@ -82,6 +82,13 @@ class Application
     private function loadAppConfig()
     {
         $this->appconfigs = require(__DIR__ . DS . 'appconfig.php');
+        foreach ($this->appconfigs as $key => $appconfig) {
+            $defstring = 'CORE_' . strtoupper($key);
+
+            if (!defined($defstring)) {
+                define($defstring, $appconfig);
+            }
+        }
     }
 
     /**
