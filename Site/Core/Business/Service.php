@@ -23,7 +23,7 @@ class Service
     /**
      *
      */
-    public function initModelProxy()
+    private function initModelProxy()
     {
         $ref = new \ReflectionObject($this);
         $properties = $ref->getProperties();
