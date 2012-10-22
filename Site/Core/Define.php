@@ -9,6 +9,7 @@ class Define
      * 设置定义的常量表
      * @param string $key
      * @param mixed $value
+     * @param bool $safe
      */
     public static function set($key, $value, $safe = false)
     {

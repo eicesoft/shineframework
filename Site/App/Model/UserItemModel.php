@@ -3,13 +3,21 @@ namespace App\Model;
 
 use Core\MVC\Model\RedisModel;
 
+/**
+ * 用户物品表
+ * 
+ * @author kelzyb <eicesoft@126.com>
+ */
 class UserItemModel extends RedisModel
 {
     protected $is_single = false;
     protected $table = 'ui:%s';
 
     /**
-     * @param $uid
+     * get 用户数据
+     * 
+     * @param int $uid 用户ID
+     * 
      * @return mixed
      */
     public function get($uid)
